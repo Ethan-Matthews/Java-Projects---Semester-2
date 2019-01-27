@@ -17,7 +17,7 @@ public class Main {
         int minimumChar = 3;
         int minimumInt = 0;
         int teamCount = 3;
-        
+
         int i = 1;
         int i1 = 0;
 
