@@ -10,14 +10,19 @@ public class Main {
         System.out.println("TEAM ENTRY");
         System.out.println("==============================");
 
+        Team[] teamArray = new Team[3];
+
+
         Scanner sc = new Scanner(System.in);
-        int teamCount = 4;
+        int teamCount = 3;
         int i = 1;
+        int i1 = 0;
         while ( i <= teamCount){
             System.out.println("Enter name for team # " + i + ": ");
-            Team currentTeam = new Team();
-            currentTeam.Name = sc.nextLine();
+            teamArray[i1] = new Team();
+            teamArray[i1].Name = sc.nextLine();
             i++;
+            i1++;
         }
 
 
