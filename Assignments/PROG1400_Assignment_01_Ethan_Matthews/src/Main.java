@@ -161,7 +161,7 @@ public class Main {
         else if (secondOverall >= 10 && secondOverall < 20) {
             System.out.println("Rating: ** stars");
         }
-        else if (secondOverall > 0 && secondOverall < 10) {
+        else if (secondOverall > 0 && secondOverall < 10) { 
             System.out.println("Rating: * star");
         }
 
