@@ -1,4 +1,6 @@
 import java.util.Scanner;
+import java.util.regex.Pattern;
+import java.util.regex.Pattern;
 
 public class Main {
     public static void main(String[] args) {
@@ -23,7 +25,7 @@ public class Main {
             System.out.println("Enter name for team # " + i + ": ");
             String currentTeam = sc.nextLine();
             if (currentTeam.length() <= minimumChar) {
-                System.out.println("ERROR!!! The team name must be longer than three characters.");
+                System.out.println("ERROR!!! The team name must be longer. Please reenter a team name.");
                 continue;
             }
 
