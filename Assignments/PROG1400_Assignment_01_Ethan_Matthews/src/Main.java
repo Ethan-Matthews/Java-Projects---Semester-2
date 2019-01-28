@@ -61,7 +61,7 @@ public class Main {
                         continue;
                     }
                 }
-                
+
                 //input and data check for goals of players
                 System.out.println("Enter number of goals for " + currentPlayer + ":");
                 int currentGoals = 0;
@@ -137,7 +137,7 @@ public class Main {
 
         //outputs team stats for first team.
         String fteamName = teamArray[0].Name;
-        System.out.printf("\n%s: G - %d A - %d Total - $%.2f", fteamName, firstTotalGoals, firstTotalAssists, teamBudget);
+        System.out.printf("\n%s: G - %d A - %d Total - %d $%.2f", fteamName, firstTotalGoals, firstTotalAssists, firstOverall, teamBudget);
         if (firstOverall >= 20) {
             System.out.println("\nRating: *** stars");
         }
@@ -152,7 +152,7 @@ public class Main {
 
         //outputs team stats for second team.
         String steamName = teamArray[1].Name;
-        System.out.printf("\n%s: G - %d A - %d Total - $%.2f", steamName, secondTotalGoals, secondTotalAssists, teamBudget2);
+        System.out.printf("\n%s: G - %d A - %d Total - %d $%.2f", steamName, secondTotalGoals, secondTotalAssists, secondOverall, teamBudget2);
             if (secondOverall >= 20) {
             System.out.println("\nRating: *** stars");
         }
@@ -167,7 +167,7 @@ public class Main {
 
         //outputs team stats for third team.
         String tteamName = teamArray[2].Name;
-        System.out.printf("\n%s: G - %d A - %d Total - $%.2f", tteamName, thirdTotalGoals, thirdTotalAssists, teamBudget3);
+        System.out.printf("\n%s: G - %d A - %d Total - %d $%.2f", tteamName, thirdTotalGoals, thirdTotalAssists, thirdOverall, teamBudget3);
         if (thirdOverall >= 20) {
             System.out.println("\nRating: *** stars");
         }
