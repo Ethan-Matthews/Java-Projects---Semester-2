@@ -50,19 +50,18 @@ public class Main {
         while ( i2 <= teamCount ) {
             System.out.println("Enter players for " + teamArray[i3].Name + ":\n");
             //for loop for creating four players
-            for (i = 0; i <= firstTeamArray.length; i++) {
+            for (i = 0; i <= 3; i++) {
                 System.out.println("Enter name for player # " + (i + 1) + ":");
                 String currentPlayer = "";
                 //while loop for player name checks if char is above three.
                 while ( currentPlayer == "" ) {
-                    currentPlayer = sc.nextLine();
+                    currentPlayer = sc.next();
                     if (currentPlayer.length() <= minimumChar) {
                         System.out.println("\"ERROR!!! The player name must be greater than three characters. Please re-enter player info.\"");
-                        break;
+                        continue;
                     }
                 }
-
-
+                
                 //input and data check for goals of players
                 System.out.println("Enter number of goals for " + currentPlayer + ":");
                 int currentGoals = 0;
@@ -91,7 +90,6 @@ public class Main {
                     firstTeamArray[i].Name = currentPlayer;
                     firstTeamArray[i].Goals = currentGoals;
                     firstTeamArray[i].Assists = currentAssists;
-
                 }
 
                 //adds player object and attributes to correct array.
@@ -100,7 +98,6 @@ public class Main {
                     secondTeamArray[i].Name = currentPlayer;
                     secondTeamArray[i].Goals = currentGoals;
                     secondTeamArray[i].Assists = currentAssists;
-
                 }
 
                 //adds player object and attributes to correct array.
@@ -109,18 +106,15 @@ public class Main {
                     thirdTeamArray[i].Name = currentPlayer;
                     thirdTeamArray[i].Goals = currentGoals;
                     thirdTeamArray[i].Assists = currentAssists;
-
                 }
-
             }
-
             i2++; //while 2 loop
             i3++;//while 2 loop
         }
 
 
         //Banner
-        System.out.println("REPORT: Stats per Team");
+        System.out.println("\nREPORT: Stats per Team");
         System.out.println("==============================");
 
         //adds all goals and assists from first team, creates totals.
@@ -142,71 +136,74 @@ public class Main {
         double teamBudget = Math.random() * 100000 + 0;
 
         //outputs team stats for first team.
-        System.out.printf("/n%a : G - %b A - %c Total: ", teamArray[0].Name, firstTotalGoals, firstTotalAssists, teamBudget);
+        String fteamName = teamArray[0].Name;
+        System.out.printf("\n%s: G - %d A - %d Total - $%.2f", fteamName, firstTotalGoals, firstTotalAssists, teamBudget);
         if (firstOverall >= 20) {
-            System.out.println("Rating: *** stars");
+            System.out.println("\nRating: *** stars");
         }
         else if (firstOverall >= 10 && firstOverall < 20) {
-            System.out.println("Rating: ** stars");
+            System.out.println("\nRating: ** stars");
         }
         else if (thirdOverall > 0 && firstOverall < 10) {
-            System.out.println("Rating: * star");
+            System.out.println("\nRating: * star");
         }
+
+        double teamBudget2 = Math.random() * 100000 + 0;
 
         //outputs team stats for second team.
-        System.out.printf("/n%a : G - %b A - %c Total: ", teamArray[1].Name, secondTotalGoals, secondTotalAssists, teamBudget);
-        if (secondOverall >= 20) {
-            System.out.println("Rating: *** stars");
+        String steamName = teamArray[1].Name;
+        System.out.printf("\n%s: G - %d A - %d Total - $%.2f", steamName, secondTotalGoals, secondTotalAssists, teamBudget2);
+            if (secondOverall >= 20) {
+            System.out.println("\nRating: *** stars");
         }
         else if (secondOverall >= 10 && secondOverall < 20) {
-            System.out.println("Rating: ** stars");
+            System.out.println("\nRating: ** stars");
         }
-        else if (secondOverall > 0 && secondOverall < 10) { 
-            System.out.println("Rating: * star");
+        else if (secondOverall > 0 && secondOverall < 10) {
+            System.out.println("\nRating: * star");
         }
 
+        double teamBudget3 = Math.random() * 100000 + 0;
+
         //outputs team stats for third team.
-        System.out.printf("/n%a : G - %b A - %c Total: ", teamArray[2].Name, thirdTotalGoals, thirdTotalAssists, teamBudget);
+        String tteamName = teamArray[2].Name;
+        System.out.printf("\n%s: G - %d A - %d Total - $%.2f", tteamName, thirdTotalGoals, thirdTotalAssists, teamBudget3);
         if (thirdOverall >= 20) {
-            System.out.println("Rating: *** stars");
+            System.out.println("\nRating: *** stars");
         }
         else if (thirdOverall >= 10 && thirdOverall < 20) {
-            System.out.println("Rating: ** stars");
+            System.out.println("\nRating: ** stars");
         }
         else if (thirdOverall > 0 && thirdOverall < 10) {
-            System.out.println("Rating: * star");
+            System.out.println("\nRating: * star");
         }
 
         //banner
-        System.out.println("REPORT: Stats per Player");
+        System.out.println("\nREPORT: Stats per Player");
         System.out.println("==============================");
 
             //for loop for output of players in first team
-            for (i = 0; i <= firstTeamArray.length; i++) {
+            for (i = 0; i <= 3; i++) {
+                String fplayerName =  firstTeamArray[i].Name;
                 int totalScore = firstTeamArray[i].Goals + firstTeamArray[i].Assists;
-                System.out.println(teamArray[0]);
-                System.out.printf("/n%a : G - %b A - %c Total - %d ", firstTeamArray[i].Name, firstTeamArray[i].Goals, firstTeamArray[i].Assists, totalScore);
-
+                System.out.println(teamArray[0].Name);
+                System.out.printf("%s: G - %d A - %d Total - %d \n\n", fplayerName, firstTeamArray[i].Goals, firstTeamArray[i].Assists, totalScore);
             }
 
             //for loop for output of players in second team
-            for (i = 0; i <= secondTeamArray.length; i++) {
+            for (i = 0; i <= 3; i++) {
+                String splayerName =  firstTeamArray[i].Name;
                 int totalScore = secondTeamArray[i].Goals + secondTeamArray[i].Assists;
-                System.out.println(teamArray[0]);
-                System.out.printf("/n%a : G - %b A - %c Total - %d ", secondTeamArray[i].Name, secondTeamArray[i].Goals, secondTeamArray[i].Assists, totalScore);
-
+                System.out.println(teamArray[1].Name);
+                System.out.printf("%s: G - %d A - %d Total - %d \n\n", splayerName, secondTeamArray[i].Goals, secondTeamArray[i].Assists, totalScore);
             }
 
             //for loop for output of players in third team
-            for (i = 0; i <= thirdTeamArray.length; i++) {
+            for (i = 0; i <= 3; i++) {
+                String tplayerName =  firstTeamArray[i].Name;
                 int totalScore = thirdTeamArray[i].Goals + thirdTeamArray[i].Assists;
-                System.out.println(teamArray[0]);
-                System.out.printf("/n%a : G - %b A - %c Total - %d ", thirdTeamArray[i].Name, thirdTeamArray[i].Goals, thirdTeamArray[i].Assists, totalScore);
-
+                System.out.println(teamArray[2].Name);
+                System.out.printf("%s: G - %d A - %d Total - %d \n\n", tplayerName, thirdTeamArray[i].Goals, thirdTeamArray[i].Assists, totalScore);
             }
-
-
-
     }
-
 }
