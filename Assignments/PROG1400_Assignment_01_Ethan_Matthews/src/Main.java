@@ -8,7 +8,7 @@ public class Main {
 
         //Team name entries from user.
         System.out.println("TEAM ENTRY");
-        System.out.println("==============================");
+        System.out.println("==============================\n");
         //new array for teams
         Team[] teamArray = new Team[3];
         //scanner for system input
@@ -37,7 +37,7 @@ public class Main {
         }
         //banner
         System.out.println("PLAYER ENTRY");
-        System.out.println("==============================");
+        System.out.println("==============================\n");
         //New arrays for team players
         Player[] firstTeamArray = new Player[4];
         Player[] secondTeamArray = new Player[4];
