@@ -1,6 +1,6 @@
 package ca.nscc;
+
 import javax.swing.*;
-import java.util.Random;
 import java.util.ArrayList;
 
 public class Main {
@@ -18,11 +18,11 @@ public class Main {
 
         int userCounter = Integer.parseInt(userNumber);
 
-        for (int i = 0; i == userCounter; i++) {
-            int randomNumber1 = (int)Math.random() * 5 + 0;
-            int randomNumber2 = (int)Math.random() * 5 + 0;
-            int randomNumber3 = (int)Math.random() * 5 + 0;
-            int randomTriangleType = (int)Math.random() * 2 + 0;
+        for (int i = 0; i < userCounter; i++) {
+            int randomNumber1 = (int)(Math.random() * 5);
+            int randomNumber2 = (int)(Math.random() * 5);
+            int randomNumber3 = (int)(Math.random() * 5);
+            int randomTriangleType = (int)(Math.random() * 2);
             String randomColourT = colourArray[randomNumber1];
             String randomColourS = colourArray[randomNumber2];
             String randomColourC = colourArray[randomNumber3];
@@ -35,7 +35,25 @@ public class Main {
 
         int totalShapes = userCounter * 3;
 
+        String output = "";
 
+        for (int i = 0; i < TriangleArray.size(); i++) {
+            output += "\n" + TriangleArray.get(i).toString();
+        }
+
+        output += "\n";
+
+        for (int i = 0; i < SquareArray.size(); i++) {
+            output += "\n" + SquareArray.get(i).toString();
+        }
+
+        output += "\n";
+
+        for (int i = 0; i < CircleArray.size(); i++) {
+            output += "\n" + CircleArray.get(i).toString();
+        }
+
+        JOptionPane.showMessageDialog(null , "\n" + output);
 
     }
 }

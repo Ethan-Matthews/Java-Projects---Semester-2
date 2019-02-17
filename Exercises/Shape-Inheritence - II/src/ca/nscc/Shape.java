@@ -13,9 +13,15 @@ public class Shape {
         this.colour = colour;
     }
 
-    public String getArea() {
-        String printString = "I calculated my Area!!!";
-        return printString;
+    public int getLength() {
+        return length;
     }
 
+    public int getHeight() {
+        return height;
+    }
+
+    public String getColour() {
+        return colour;
+    }
 }

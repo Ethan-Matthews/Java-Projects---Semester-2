@@ -12,10 +12,14 @@ public class Circle extends Shape {
         this.radius = radius;
     }
 
+    public double getAreaCircle() {
+        double areaCircle = Math.pow((3.14 * radius), 2);
+        return areaCircle;
+    }
+
+
     @Override
     public String toString() {
-        return "Circle{" +
-                "radius=" + radius +
-                '}';
+        return String.format("I'm a " + super.getColour() + " circle. My radius is " + radius + ". My area is " + getAreaCircle() + ".");
     }
 }

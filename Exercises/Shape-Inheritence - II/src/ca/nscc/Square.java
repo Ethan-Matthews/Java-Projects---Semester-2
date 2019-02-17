@@ -12,4 +12,15 @@ public class Square extends Shape {
         this.DiagonalLength = DiagonalLength;
     }
 
+    public double getAreaSquare() {
+        double areaSquare = getLength() * getHeight();
+        return areaSquare;
+    }
+
+    @Override
+    public String toString() {
+        return "I'm a " + super.getColour() + " Square. My Diagonal Length is " + DiagonalLength + ". My area is " + getAreaSquare() + ".";
+    }
 }
+
+

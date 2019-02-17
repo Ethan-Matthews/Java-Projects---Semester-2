@@ -12,4 +12,14 @@ public class Triangle extends Shape {
         this.Type = Type;
     }
 
+    public double getAreaTriangle() {
+        double areaTriangle = (getLength()/2) * getHeight();
+        return areaTriangle;
+    }
+
+    @Override
+    public String toString() {
+        return "I'm a " + super.getColour() + " Triangle. My Type is " + Type + ". My area is " + getAreaTriangle() + ".";
+    }
+
 }
