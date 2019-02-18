@@ -4,14 +4,17 @@ public class Student extends Person {
     //Private Student attributes.
     private int year;
     private double fee;
+
     //Student object constructor. Takes name and address from super person class.
     public Student(String name,String address, int year, double fee) {
         super(name, address);
         this.year = year;
         this.fee = fee; }
+
     //getter for fee.
     public double getFee() {
         return fee; }
+
     //override method. Formats string to output all attributes of the object.
     @Override
     public String toString() {

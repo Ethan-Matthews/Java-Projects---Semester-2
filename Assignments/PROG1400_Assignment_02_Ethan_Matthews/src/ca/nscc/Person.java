@@ -4,6 +4,7 @@ public class Person {
     //attributes are set to private.
     private String name;
     private String address;
+
     //constructor for person.
     public Person(String name, String address) {
         this.name = name;
@@ -13,6 +14,7 @@ public class Person {
     public String getName() {
         return name;
     }
+
     //getter for addresses.
     public String getAddress() {
         return address;
