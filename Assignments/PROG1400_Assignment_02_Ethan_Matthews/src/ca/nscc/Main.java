@@ -16,7 +16,7 @@ public class Main {
         else { return false; } }
 
     //Method for validating staff numeric input. Regex compares first digit to numbers ranging from 1 to 9. OR - It compares the first digit
-    //to numbers ranging from 1 to 2 and the second digit for numbers ranging from 0 to 9.  This results in the input being valid only if
+    //to numbers ranging from 1 to 2 and the second digit for numbers ranging from 0 to 9.  This results in the input being valid only if 
     //the number ranges between 0 and 30.
     private static boolean inputValStaffInt(String number) {
         if (number.matches("[1-9]|[1-2][0-9]")) {
