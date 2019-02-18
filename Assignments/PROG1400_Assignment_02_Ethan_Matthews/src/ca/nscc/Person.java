@@ -1,7 +1,7 @@
 package ca.nscc;
 //Person superclass. Attributes for names and addresses common to staff and student objects.
 public class Person {
-    //attributes are set to private.
+    //attributes are set to  private.
     private String name;
     private String address;
 

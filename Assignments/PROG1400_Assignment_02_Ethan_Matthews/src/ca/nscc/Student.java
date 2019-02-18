@@ -5,7 +5,7 @@ public class Student extends Person {
     private int year;
     private double fee;
 
-    //Student object constructor. Takes name and address from super person class.
+    //Student object constructor. Takes name and address from super person  class.
     public Student(String name,String address, int year, double fee) {
         super(name, address);
         this.year = year;

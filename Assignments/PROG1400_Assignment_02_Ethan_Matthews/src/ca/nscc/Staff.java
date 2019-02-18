@@ -5,7 +5,7 @@ public class Staff extends Person {
     private int yearsOfService;
     private double salary;
 
-    //Staff object constructor. Takes name and address from super person class.
+    //Staff object constructor. Takes name and address from super person  class.
     public Staff(String name, String address, int yearsOfService, double salary) {
         super(name, address);
         this.yearsOfService = yearsOfService;
