@@ -11,12 +11,8 @@ public class Person {
         this.address = address;
     }
     //getter for names.
-    public String getName() {
-        return name;
-    }
+    public String getName() { return name; }
 
     //getter for addresses.
-    public String getAddress() {
-        return address;
-    }
+    public String getAddress() { return address; }
 }

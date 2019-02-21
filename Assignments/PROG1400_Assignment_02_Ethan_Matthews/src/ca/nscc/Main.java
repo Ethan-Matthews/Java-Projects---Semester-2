@@ -5,29 +5,29 @@ import javax.swing.*;
 public class Main {
     //method for validating Alphabetic input. Checks if the string is  empty.
     private static boolean inputValAlpha(String input) {
-        if (input.isEmpty()) {
-            return false; }
-        else { return true; } }
+        if (input.isEmpty())
+            return false;
+        else return true; }
 
     //method for validating student numeric input. Regex compares first digit to numbers ranging from 1 to 4.
     private static boolean inputValStudentInt(String number) {
-        if (number.matches("[1-4]")) {
-            return true; }
-        else { return false; } }
+        if (number.matches("[1-4]"))
+            return true;
+        else return false; }
 
     //Method for validating staff numeric input. Regex compares first digit to numbers ranging from 1 to 9. OR - It compares the first digit
     //to numbers ranging from 1 to 2 and the second digit for numbers ranging from 0 to 9.  This results in the input being valid only if
     //the number ranges between 0 and 30.
     private static boolean inputValStaffInt(String number) {
-        if (number.matches("[1-9]|[1-2][0-9]")) {
-            return true; }
-        else { return false; } }
+        if (number.matches("[1-9]|[1-2][0-9]"))
+            return true;
+        else return false; }
 
     //If the cancel button was pressed, it returns a null. Method returns true flag to break out of do-while loop.
     private static boolean nullCancelSignal(String input) {
         if (input ==  null)
             return true;
-        else { return false; } }
+        else return false; }
 
     //Shows dialog box when alphabetic input is incorrect.
     private static void AlphaError() { JOptionPane.showMessageDialog(
@@ -62,10 +62,10 @@ public class Main {
         Object[] buttonOptions = {"Student", "Staff", "Finish"};
 
         //Array list for Staff objects.
-        ArrayList<Staff> StaffList = new ArrayList();
+        ArrayList<Staff> StaffList = new ArrayList<>();
 
         //Array list for student objects.
-        ArrayList<Student> StudentList = new ArrayList();
+        ArrayList<Student> StudentList = new ArrayList<>();
 
         //Termination Flag.
         boolean terminationFlag = false;
@@ -101,13 +101,13 @@ public class Main {
                         "Input",
                         JOptionPane.QUESTION_MESSAGE);
                     //If cancel has been selected will break loop.
-                    if (nullCancelSignal(StudentName)) {
-                       break; }
+                    if (nullCancelSignal(StudentName))
+                       break;
                     //Checks if string is empty.
-                    if (inputValAlpha(StudentName)) {
-                        CheckStudentName = true; }
+                    if (inputValAlpha(StudentName))
+                        CheckStudentName = true;
                     //Shows message box if string IS empty.
-                    else {AlphaError();}
+                    else AlphaError();
 
                 //While loop will continue to gather input if flag remains false.
                 } while (!CheckStudentName);
@@ -119,13 +119,13 @@ public class Main {
                         JOptionPane.QUESTION_MESSAGE);
 
                     //If cancel has been selected will break loop.
-                    if (nullCancelSignal(StudentAddress)) {
-                        break; }
+                    if (nullCancelSignal(StudentAddress))
+                        break;
                     //Checks if string is empty.
-                    if (inputValAlpha(StudentAddress)) {
-                        CheckStudentAddress = true; }
+                    if (inputValAlpha(StudentAddress))
+                        CheckStudentAddress = true;
                     //Shows message box if string IS empty.
-                    else {AlphaError();}
+                    else AlphaError();
 
                 //While loop will continue to gather input if flag remains false.
                 } while (!CheckStudentAddress);
@@ -137,20 +137,20 @@ public class Main {
                         JOptionPane.QUESTION_MESSAGE);
 
                     //If cancel has been selected will break loop.
-                    if (nullCancelSignal(StudentYear)) {
-                        break; }
+                    if (nullCancelSignal(StudentYear))
+                        break;
                     //Checks if number is between 1-4, only accepts numbers, all other chars are not accepted.
-                    if (inputValStudentInt(StudentYear)) {
-                        CheckStudentYear = true; }
+                    if (inputValStudentInt(StudentYear))
+                        CheckStudentYear = true;
                     //Shows message box if string not formatted correctly.
-                    else {NumberError();}
+                    else NumberError();
 
                 //While loop will continue to gather input if flag remains false.
                 } while (!CheckStudentYear);
 
                 //if any of the values are intentionally null, the object will not be created and the loop will repeat.
-                if (StudentName == null || StudentAddress == null || StudentYear == null){
-                    continue; }
+                if (StudentName == null || StudentAddress == null || StudentYear == null)
+                    continue;
 
                 //Creates new Student object with all attributes. Also adds the appropriate fee to the object as an attribute.
                 StudentList.add(new Student(StudentName,
@@ -176,11 +176,11 @@ public class Main {
                         JOptionPane.QUESTION_MESSAGE);
 
                     //If cancel has been selected will break loop.
-                    if (nullCancelSignal(StaffName)) {
-                        break; }
+                    if (nullCancelSignal(StaffName))
+                        break;
                     //Checks if string is empty.
-                    if (inputValAlpha(StaffName)) {
-                        CheckStaffName = true; }
+                    if (inputValAlpha(StaffName))
+                        CheckStaffName = true;
                     //Shows message box if string not formatted correctly.
                     else {AlphaError();}
 
@@ -194,13 +194,13 @@ public class Main {
                         JOptionPane.QUESTION_MESSAGE);
 
                     //If cancel has been selected will break loop.
-                    if (nullCancelSignal(StaffAddress)) {
-                        break; }
+                    if (nullCancelSignal(StaffAddress))
+                        break;
                     //Checks if string is empty.
-                    if (inputValAlpha(StaffAddress)) {
-                        CheckStaffAddress = true; }
+                    if (inputValAlpha(StaffAddress))
+                        CheckStaffAddress = true;
                     //Shows message box if string not formatted correctly.
-                    else {AlphaError();}
+                    else AlphaError();
 
                 //While loop will continue to gather input if flag remains false.
                 } while (!CheckStaffAddress);
@@ -212,17 +212,17 @@ public class Main {
                         JOptionPane.QUESTION_MESSAGE);
 
                     //If cancel has been selected will break loop.
-                    if (nullCancelSignal(StaffYears)) {
-                        break; }
+                    if (nullCancelSignal(StaffYears))
+                        break;
                     //Checks if number is between 0-30, only accepts numbers, all other chars are not accepted.
-                    if (inputValStaffInt(StaffYears)) {
-                        CheckStaffYears = true; }
+                    if (inputValStaffInt(StaffYears))
+                        CheckStaffYears = true;
                     //Shows message box if string not formatted correctly.
-                    else {NumberError();}
+                    else NumberError();
 
                 //While loop will continue to gather input if flag remains false.
                 } while (!CheckStaffYears);
-                //if any of the values are intentionally null, the object will not be created and the loop will repeat.
+                //if any of the values are intentionally null (cancel button), the object will not be created and the loop will repeat.
                 if (StaffName == null || StaffAddress == null || StaffYears == null){
                     continue; }
 
@@ -247,11 +247,8 @@ public class Main {
                 for (Student thisStudent : StudentList) {
                     int i = 1;
                     finalOutput += "\n" + (i) + ". " + thisStudent.toString();
-                    StudentTotal +=thisStudent.getFee();
+                    StudentTotal += thisStudent.getFeeCalc();
                     i++; }
-
-                //Divides total student invoices by 2.
-                StudentTotal = StudentTotal / 2;
 
                 //Staff banner, with number of staff objects added.
                 finalOutput +=  "\nStaff " + "[Total: " + StaffList.size() + "]";
@@ -259,11 +256,8 @@ public class Main {
                 for (Staff thisStaff : StaffList) {
                     int i = 1;
                     finalOutput += "\n" + (i) + ". " + thisStaff.toString();
-                    StaffTotal += thisStaff.getSalary();
+                    StaffTotal += thisStaff.getSalaryCalc();
                     i++; }
-
-                //Divides total staff salaries by 26.
-                StaffTotal = StaffTotal / 26;
 
                 //Difference in outgoing and incoming money.
                 double finalTotal = StudentTotal - StaffTotal;

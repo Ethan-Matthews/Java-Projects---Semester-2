@@ -11,9 +11,8 @@ public class Student extends Person {
         this.year = year;
         this.fee = fee; }
 
-    //getter for fee.
-    public double getFee() {
-        return fee; }
+    //Method for fee calculation.
+    public double getFeeCalc() { return fee / 2 ; }
 
     //override method. Formats string to output all attributes of the object.
     @Override

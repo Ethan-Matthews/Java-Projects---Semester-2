@@ -11,9 +11,8 @@ public class Staff extends Person {
         this.yearsOfService = yearsOfService;
         this.salary = salary; }
 
-    //Getter for salary.
-    public double getSalary() {
-        return salary; }
+    //Method for salary Calculation.
+    public double getSalaryCalc() { return salary / 26; }
 
     //override method. Formats string to output all attributes of the object.
     @Override
