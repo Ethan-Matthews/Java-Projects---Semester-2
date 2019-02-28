@@ -31,15 +31,15 @@ public class Main {
         rightJPanel.setBounds(400, 50, 400, 350);
         mainFrame.add(rightJPanel);
 
-//        JLabel leftText = new JLabel("This is the Left Panel");
-//        leftText.setBounds(140, 100, 125, 50);
-//        leftJPanel.add(leftText);
-//
-//        JLabel rightText = new JLabel("This is the Right Panel");
-//        rightText.setBounds(540, 100, 125, 50);
-//        rightJPanel.add(rightText);
+        JLabel leftText = new JLabel("This is the Left Panel");
+        leftText.setBounds(140, 100, 125, 50);
+        leftText.setBackground(myRed);
+        leftJPanel.add(leftText);
 
-//        leftJPanel.add(myButton);
+        JLabel rightText = new JLabel("This is the Right Panel");
+        rightText.setBounds(540, 100, 125, 50);
+        rightText.setBackground(myBlue);
+        rightJPanel.add(rightText);
 
         mainFrame.setLayout(null);
 
