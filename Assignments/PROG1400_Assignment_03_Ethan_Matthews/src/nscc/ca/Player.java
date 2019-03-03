@@ -15,9 +15,7 @@ public class Player extends Character{
         return playerName;
     }
 
-    public Equipment getEquippedWeapon() {
-        return equippedWeapon;
-    }
+    public Equipment getEquippedWeapon() { return equippedWeapon; }
 
     @Override
     public String toString() {
