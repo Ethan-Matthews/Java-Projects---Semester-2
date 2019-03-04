@@ -4,8 +4,8 @@ public class Paladin extends Player {
 
     private int healBonus;
 
-    public Paladin(int strength, int intelligence, int dexterity, int vitality, int healBonus) {
-        super(strength, intelligence, dexterity, vitality);
+    public Paladin(String playerName, Equipment equippedWeapon, int strength, int intelligence, int dexterity, int vitality, int healBonus) {
+        super(playerName, equippedWeapon, strength, intelligence, dexterity, vitality);
         this.healBonus = healBonus;
     }
 

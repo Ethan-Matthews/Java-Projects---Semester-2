@@ -7,6 +7,7 @@ public class JFrameClass extends JFrame {
 
     public JFrameClass() {
         setDefaultCloseOperation(JFrameClass.EXIT_ON_CLOSE);
+        setTitle("Heroes Quest RPG Character Creator");
         setSize(1000, 1000);
         //Found how to center the JFrame with out a lot of hassle.
         //https://stackoverflow.com/questions/2442599/how-to-set-jframe-to-appear-centered-regardless-of-monitor-resolution

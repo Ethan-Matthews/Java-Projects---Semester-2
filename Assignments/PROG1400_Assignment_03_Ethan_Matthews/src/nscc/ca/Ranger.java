@@ -4,8 +4,8 @@ public class Ranger extends Player {
 
     private int rangeBonus;
 
-    public Ranger(int strength, int intelligence, int dexterity, int vitality, int rangeBonus) {
-        super(strength, intelligence, dexterity, vitality);
+    public Ranger(String playerName, Equipment equippedWeapon, int strength, int intelligence, int dexterity, int vitality, int rangeBonus) {
+        super(playerName, equippedWeapon, strength, intelligence, dexterity, vitality);
         this.rangeBonus = rangeBonus;
     }
 

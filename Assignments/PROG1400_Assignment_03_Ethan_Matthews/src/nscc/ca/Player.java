@@ -5,7 +5,7 @@ public class Player extends Character{
     private String playerName;
     private Equipment equippedWeapon;
 
-    public Player(int strength, int intelligence, int dexterity, int vitality) {
+    public Player(String playerName, Equipment equippedWeapon, int strength, int intelligence, int dexterity, int vitality) {
         super(strength, intelligence, dexterity, vitality);
         this.playerName = playerName;
         this.equippedWeapon = equippedWeapon;

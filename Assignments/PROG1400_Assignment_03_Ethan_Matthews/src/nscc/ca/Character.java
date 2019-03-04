@@ -2,15 +2,18 @@ package nscc.ca;
 
 public class Character {
     private int strength;
+    private int vitality;
     private int intelligence;
     private int dexterity;
-    private int vitality;
 
-    public Character(int strength, int intelligence, int dexterity, int vitality) {
+
+    public Character(int strength, int vitality, int intelligence, int dexterity) {
         this.strength = strength;
+        this.vitality = vitality;
         this.intelligence = intelligence;
         this.dexterity = dexterity;
-        this.vitality = vitality;
+
+
 
     }
 
