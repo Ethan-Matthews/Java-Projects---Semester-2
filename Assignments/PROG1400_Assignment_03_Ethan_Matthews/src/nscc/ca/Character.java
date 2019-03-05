@@ -1,6 +1,6 @@
 package nscc.ca;
 
-public class Character {
+public abstract class Character {
     private int strength;
     private int vitality;
     private int intelligence;
@@ -12,9 +12,6 @@ public class Character {
         this.vitality = vitality;
         this.intelligence = intelligence;
         this.dexterity = dexterity;
-
-
-
     }
 
     public int getStrength() {
@@ -31,6 +28,22 @@ public class Character {
 
     public int getVitality() {
         return vitality;
+    }
+
+    public void setStrength(int strength) {
+        this.strength = strength;
+    }
+
+    public void setVitality(int vitality) {
+        this.vitality = vitality;
+    }
+
+    public void setIntelligence(int intelligence) {
+        this.intelligence = intelligence;
+    }
+
+    public void setDexterity(int dexterity) {
+        this.dexterity = dexterity;
     }
 
     @Override

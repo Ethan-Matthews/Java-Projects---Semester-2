@@ -13,10 +13,16 @@ public class Mage extends Player {
         return spellPower;
     }
 
+    public void setSpellPower(int spellPower) {
+        this.spellPower = spellPower;
+    }
+
     @Override
     public String toString() {
-        return "Mage{" +
-                "spellPower=" + spellPower +
-                '}';
+        return
+        String.format(" Player: %1$-20s", getPlayerName()) + "\n" +
+        " ----------------------------------------------------------------------------------------" + "\n" +
+        String.format("%1$-20s", " Stats: ") + String.format("%1$-20s", " Strength: " + getStrength()) + String.format("%1$-20s", "Vitality: " + getVitality()) + String.format("%1$-20s", "Intelligence: " + getIntelligence()) + String.format("%1$-20s","Dexterity: " + getDexterity()) + "\n" +
+        getEquippedWeapon();
     }
 }

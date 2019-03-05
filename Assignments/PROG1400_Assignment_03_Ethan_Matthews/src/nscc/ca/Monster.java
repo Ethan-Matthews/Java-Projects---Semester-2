@@ -1,10 +1,10 @@
 package nscc.ca;
 
-public class Monster extends Character {
+public abstract class Monster extends Character {
 
     private String monsterName;
 
-    public Monster(int strength, int intelligence, int dexterity, int vitality) {
+    public Monster(String monsterName, int strength, int intelligence, int dexterity, int vitality) {
         super(strength, intelligence, dexterity, vitality);
         this.monsterName = monsterName;
     }

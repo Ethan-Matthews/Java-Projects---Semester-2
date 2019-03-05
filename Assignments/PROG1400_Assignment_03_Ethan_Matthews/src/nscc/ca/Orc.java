@@ -4,8 +4,8 @@ public class Orc extends Monster {
 
     private int strengthBonus;
 
-    public Orc(int strength, int intelligence, int dexterity, int vitality, int strengthBonus) {
-        super(strength, intelligence, dexterity, vitality);
+    public Orc(String monsterName, int strength, int intelligence, int dexterity, int vitality, int strengthBonus) {
+        super(monsterName, strength, intelligence, dexterity, vitality);
         this.strengthBonus = strengthBonus;
     }
 
@@ -15,9 +15,11 @@ public class Orc extends Monster {
 
     @Override
     public String toString() {
-        return "Orc{" +
-                "strengthBonus=" + strengthBonus +
-                '}';
+        return
+        String.format("%1$-20s","\n Monster: " + getMonsterName()) + "\n" +
+        " ----------------------------------------------------------------------------------------" + "\n" +
+        String.format("%1$-20s", " Stats: ") + String.format("%1$-20s", " Strength: " + getStrength()) + String.format("%1$-20s", "Vitality: " + getVitality()) + String.format("%1$-20s", "Intelligence: " + getIntelligence()) + String.format("%1$-20s","Dexterity: " + getDexterity()) + "\n" +
+        String.format("%1$-19s"," Special: ") + String.format("%1$-19s", "Strength Bonus: " + getStrengthBonus());
     }
 
 }

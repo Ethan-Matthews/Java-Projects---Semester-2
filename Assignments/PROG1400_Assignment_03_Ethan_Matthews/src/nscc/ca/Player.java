@@ -1,6 +1,6 @@
 package nscc.ca;
 
-public class Player extends Character{
+public abstract class Player extends Character{
 
     private String playerName;
     private Equipment equippedWeapon;
@@ -16,6 +16,14 @@ public class Player extends Character{
     }
 
     public Equipment getEquippedWeapon() { return equippedWeapon; }
+
+    public void setPlayerName(String playerName) {
+        this.playerName = playerName;
+    }
+
+    public void setEquippedWeapon(Equipment equippedWeapon) {
+        this.equippedWeapon = equippedWeapon;
+    }
 
     @Override
     public String toString() {

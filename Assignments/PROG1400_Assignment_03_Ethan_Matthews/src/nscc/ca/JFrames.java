@@ -3,10 +3,10 @@ package nscc.ca;
 import javax.swing.*;
 import java.awt.*;
 
-public class JFrameClass extends JFrame {
+public abstract class JFrames extends JFrame {
 
-    public JFrameClass() {
-        setDefaultCloseOperation(JFrameClass.EXIT_ON_CLOSE);
+    public JFrames() {
+        setDefaultCloseOperation(JFrames.EXIT_ON_CLOSE);
         setTitle("Heroes Quest RPG Character Creator");
         setSize(1000, 1000);
         //Found how to center the JFrame with out a lot of hassle.

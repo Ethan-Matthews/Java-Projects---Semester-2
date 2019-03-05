@@ -1,6 +1,6 @@
 package nscc.ca;
 
-public class Equipment {
+public abstract class Equipment {
 
     private int weight;
     private int attack;

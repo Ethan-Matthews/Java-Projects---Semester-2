@@ -15,9 +15,8 @@ public class Bow extends Equipment{
 
     @Override
     public String toString() {
-        return "Bow{" +
-                "rangeModifier=" + rangeModifier +
-                '}';
+        return String.format("%1$-16s"," Weapon:") + String.format("%1$-19s", "Weight: " + getWeight()) + String.format("%1$-20s", "Attack: " + getAttack())+ String.format("%1$-17s", "Range Modifier: " + getRangeModifier()) + "\n";
+
     }
 
 

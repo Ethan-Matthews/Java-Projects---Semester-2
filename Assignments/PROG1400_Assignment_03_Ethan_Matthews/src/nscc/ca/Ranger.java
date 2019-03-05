@@ -13,10 +13,16 @@ public class Ranger extends Player {
         return rangeBonus;
     }
 
+    public void setRangeBonus(int rangeBonus) {
+        this.rangeBonus = rangeBonus;
+    }
+
     @Override
     public String toString() {
-        return "Ranger{" +
-                "rangeBonus=" + rangeBonus +
-                '}';
+        return
+        String.format(" Player: %1$-20s", getPlayerName()) + "\n" +
+        " ----------------------------------------------------------------------------------------" + "\n" +
+        String.format("%1$-20s", " Stats: ") + String.format("%1$-20s", " Strength: " + getStrength()) + String.format("%1$-20s", "Vitality: " + getVitality()) + String.format("%1$-20s", "Intelligence: " + getIntelligence()) + String.format("%1$-20s","Dexterity: " + getDexterity()) + "\n" +
+        getEquippedWeapon();
     }
 }
