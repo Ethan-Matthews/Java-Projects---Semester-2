@@ -1,10 +1,10 @@
 package nscc.ca;
-
+//Abstract Super Class Extends from Character.
 public abstract class Player extends Character{
 
     private String playerName;
     private Equipment equippedWeapon;
-
+    //Constructor.
     public Player(String playerName, Equipment equippedWeapon, int strength, int intelligence, int dexterity, int vitality) {
         super(strength, intelligence, dexterity, vitality);
         this.playerName = playerName;

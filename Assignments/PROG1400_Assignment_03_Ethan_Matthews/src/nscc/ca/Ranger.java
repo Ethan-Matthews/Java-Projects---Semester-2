@@ -1,9 +1,9 @@
 package nscc.ca;
-
+//Character Class extends from Player & Character.
 public class Ranger extends Player {
 
     private int rangeBonus;
-
+    //Constructor.
     public Ranger(String playerName, Equipment equippedWeapon, int strength, int intelligence, int dexterity, int vitality, int rangeBonus) {
         super(playerName, equippedWeapon, strength, intelligence, dexterity, vitality);
         this.rangeBonus = rangeBonus;
@@ -14,9 +14,8 @@ public class Ranger extends Player {
     }
 
     public void setRangeBonus(int rangeBonus) {
-        this.rangeBonus = rangeBonus;
-    }
-
+        this.rangeBonus = rangeBonus; }
+    //To String formats text for ranger output in battle screen.
     @Override
     public String toString() {
         return

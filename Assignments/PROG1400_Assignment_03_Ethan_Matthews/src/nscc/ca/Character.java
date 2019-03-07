@@ -1,11 +1,10 @@
 package nscc.ca;
-
+//Abstract Super Class Character.
 public abstract class Character {
     private int strength;
     private int vitality;
     private int intelligence;
     private int dexterity;
-
 
     public Character(int strength, int vitality, int intelligence, int dexterity) {
         this.strength = strength;

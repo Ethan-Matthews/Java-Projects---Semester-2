@@ -1,9 +1,9 @@
 package nscc.ca;
-
+//Monster Class extends from Player & Character.
 public class Orc extends Monster {
 
     private int strengthBonus;
-
+    //Constructor
     public Orc(String monsterName, int strength, int intelligence, int dexterity, int vitality, int strengthBonus) {
         super(monsterName, strength, intelligence, dexterity, vitality);
         this.strengthBonus = strengthBonus;
@@ -12,7 +12,7 @@ public class Orc extends Monster {
     public int getStrengthBonus() {
         return strengthBonus;
     }
-
+    //To String formats text for Orc output in battle screen.
     @Override
     public String toString() {
         return

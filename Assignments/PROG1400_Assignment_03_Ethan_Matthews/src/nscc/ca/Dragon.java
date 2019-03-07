@@ -1,9 +1,9 @@
 package nscc.ca;
-
+//Monster Class extends from Player & Character.
 public class Dragon extends Monster {
 
     private String breathType;
-
+    //Constructor.
     public Dragon(String monsterName, int strength, int intelligence, int dexterity, int vitality, String breathType) {
         super(monsterName, strength, intelligence, dexterity, vitality);
         this.breathType = breathType;
@@ -12,7 +12,7 @@ public class Dragon extends Monster {
     public String getBreathType() {
         return breathType;
     }
-
+    //To String formats text for Dragon output in battle screen.
     @Override
     public String toString() {
         return

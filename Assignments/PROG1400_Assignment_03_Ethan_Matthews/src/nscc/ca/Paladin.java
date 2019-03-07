@@ -1,9 +1,9 @@
 package nscc.ca;
-
+//Character Class extends from Player & Character.
 public class Paladin extends Player {
 
     private int healBonus;
-
+    //Constructor.
     public Paladin(String playerName, Equipment equippedWeapon, int strength, int intelligence, int dexterity, int vitality, int healBonus) {
         super(playerName, equippedWeapon, strength, intelligence, dexterity, vitality);
         this.healBonus = healBonus;
@@ -16,7 +16,7 @@ public class Paladin extends Player {
     public void setHealBonus(int healBonus) {
         this.healBonus = healBonus;
     }
-
+    //To String formats text for Paladin output in battle screen.
     @Override
     public String toString() {
         return

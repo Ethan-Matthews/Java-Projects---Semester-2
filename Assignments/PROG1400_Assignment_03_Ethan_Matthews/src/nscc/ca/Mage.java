@@ -1,9 +1,9 @@
 package nscc.ca;
-
+//Character Class extends from Player & Character.
 public class Mage extends Player {
 
     private int spellPower;
-
+    //Constructor.
     public Mage(String playerName, Equipment equippedWeapon, int strength, int intelligence, int dexterity, int vitality, int spellPower) {
         super(playerName, equippedWeapon, strength, intelligence, dexterity, vitality);
         this.spellPower = spellPower;
@@ -14,9 +14,8 @@ public class Mage extends Player {
     }
 
     public void setSpellPower(int spellPower) {
-        this.spellPower = spellPower;
-    }
-
+        this.spellPower = spellPower; }
+    //To String formats text for Mage output in battle screen.
     @Override
     public String toString() {
         return

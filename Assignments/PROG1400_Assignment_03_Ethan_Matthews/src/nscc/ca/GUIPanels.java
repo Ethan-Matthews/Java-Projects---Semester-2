@@ -4,7 +4,6 @@ import javax.swing.*;
 import javax.swing.border.*;
 import java.awt.*;
 import java.awt.event.*;
-import java.io.FileNotFoundException;
 
 public class GUIPanels extends JFrames {
 
@@ -395,6 +394,12 @@ public class GUIPanels extends JFrames {
         statGenBnP2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                try {
+                    Sound diceEffect = new Sound("Audio/Roll_Dice.wav");
+                    diceEffect.playOnce();
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                }
                 strengthTfP2.setText(Integer.toString(randomGenerator()));
                 vitalityTfP2.setText(Integer.toString(randomGenerator()));
                 intelligenceTfP2.setText(Integer.toString(randomGenerator()));
