@@ -18,6 +18,12 @@ public abstract class Equipment {
         return attack;
     }
 
+    public void setWeight(int weight) {
+        this.weight = weight; }
+
+    public void setAttack(int attack) {
+        this.attack = attack; }
+
     @Override
     public String toString() {
         return "Equipment{" +

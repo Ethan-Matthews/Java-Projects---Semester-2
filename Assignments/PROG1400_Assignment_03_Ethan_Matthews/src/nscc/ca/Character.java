@@ -5,7 +5,7 @@ public abstract class Character {
     private int vitality;
     private int intelligence;
     private int dexterity;
-
+    //Constructor
     public Character(int strength, int vitality, int intelligence, int dexterity) {
         this.strength = strength;
         this.vitality = vitality;

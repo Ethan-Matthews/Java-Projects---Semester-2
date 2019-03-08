@@ -12,6 +12,10 @@ public class Orc extends Monster {
     public int getStrengthBonus() {
         return strengthBonus;
     }
+
+    public void setStrengthBonus(int strengthBonus) {
+        this.strengthBonus = strengthBonus; }
+
     //To String formats text for Orc output in battle screen.
     @Override
     public String toString() {

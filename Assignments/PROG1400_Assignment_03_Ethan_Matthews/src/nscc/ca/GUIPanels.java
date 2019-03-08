@@ -15,6 +15,9 @@ public class GUIPanels extends JFrames {
 
     public Boolean inputCheck(String name, String stat, ButtonGroup classes, ButtonGroup weapons) {
         boolean acceptableInput = true;
+
+        Sound errorEffect = new Sound("Audio/Buzzer1.wav");
+
         UIManager UI = new UIManager();
         UI.put("OptionPane.background", Color.BLACK);
         UI.put("Panel.background", Color.BLACK);
@@ -29,20 +32,24 @@ public class GUIPanels extends JFrames {
         button.setForeground(Color.WHITE);
 
         if (name.isEmpty()) {
+            errorEffect.playOnce();
             JOptionPane.showMessageDialog(null, message, "Whoops", JOptionPane.ERROR_MESSAGE);
             acceptableInput = false;
         }
         else if (classes.getSelection()==null) {
+            errorEffect.playOnce();
             message.setText("Please Select a Class.");
             JOptionPane.showMessageDialog(null, message, "Whoops", JOptionPane.ERROR_MESSAGE);
             acceptableInput = false;
         }
         else if (weapons.getSelection()==null) {
+            errorEffect.playOnce();
             message.setText("Please Select a Weapon.");
             JOptionPane.showMessageDialog(null, message, "Whoops", JOptionPane.ERROR_MESSAGE);
             acceptableInput = false;
         }
         else if (stat.isEmpty()) {
+            errorEffect.playOnce();
             message.setText("Please Roll your characters Stats.");
             JOptionPane.showMessageDialog(null, message, "Whoops", JOptionPane.ERROR_MESSAGE);
             acceptableInput = false;
@@ -53,7 +60,19 @@ public class GUIPanels extends JFrames {
 
     public GUIPanels() {
 
+        Sound restartEffect = new Sound("Audio/Applause1.wav");
+        Sound nextEffect = new Sound("Audio/BattleStart.wav");
+        Sound effectEquip1 = new Sound("Audio/Equip1.wav");
+        Sound effectEquip2 = new Sound("Audio/Equip2.wav");
+        Sound effectEquip3 = new Sound("Audio/Equip3.wav");
+        Sound effectBow = new Sound("Audio/Bow4.wav");
+        Sound effectSwords = new Sound("Audio/Sword6.wav");
+        Sound effectThunder = new Sound("Audio/Thunder10.wav");
+        Sound effectDice = new Sound("Audio/Roll_Dice.wav");
+        Sound effectGate = new Sound("Audio/Gate2.wav");
+        Sound battleBGM = new Sound("Audio/Battle5.wav");
         Sound BGM = new Sound("Audio/Theme1.wav");
+
         BGM.loopContinuously();
 
         int spellPower = 2;
@@ -89,7 +108,7 @@ public class GUIPanels extends JFrames {
             splashScreen.add(picLbP1);
         } catch (Exception ex) { ex.printStackTrace();}
 
-        JLabels titleLbP1 = new JLabels(0,0,1000,188, "HEROES QUEST", 72);
+        JLabels titleLbP1 = new JLabels(0,0,1000,188, "FOOLS QUEST", 72);
         titleLbP1.setHorizontalAlignment(JLabel.CENTER);
         splashScreen.add(titleLbP1);
 
@@ -292,10 +311,7 @@ public class GUIPanels extends JFrames {
         createBnP1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                try {
-                    Sound effectGate = new Sound("Audio/Gate2.wav");
-                    effectGate.playOnce();
-                } catch (Exception ex){ ex.printStackTrace(); }
+                effectGate.playOnce();
                 splashScreen.setVisible(false);
                 charCreator.setVisible(true);
             }
@@ -303,8 +319,12 @@ public class GUIPanels extends JFrames {
 
         battleBnP2.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e) {
+            public  void actionPerformed(ActionEvent e) {
                 if (inputCheck(playerNameTfP2.getText(), strengthTfP2.getText(), charClasses, weaponClasses)) {
+                    BGM.stopSound();
+                    nextEffect.playOnce();
+                    battleBGM.reset();
+                    battleBGM.loopContinuously();
                     try {
                         picEnemyLbP3.setIcon(new ImageIcon(getClass().getResource("/Images/Orc.png")));
                     } catch (Exception ex){ ex.printStackTrace(); }
@@ -394,12 +414,7 @@ public class GUIPanels extends JFrames {
         statGenBnP2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                try {
-                    Sound diceEffect = new Sound("Audio/Roll_Dice.wav");
-                    diceEffect.playOnce();
-                } catch (Exception ex) {
-                    ex.printStackTrace();
-                }
+                effectDice.playOnce();
                 strengthTfP2.setText(Integer.toString(randomGenerator()));
                 vitalityTfP2.setText(Integer.toString(randomGenerator()));
                 intelligenceTfP2.setText(Integer.toString(randomGenerator()));
@@ -411,6 +426,7 @@ public class GUIPanels extends JFrames {
         nextBnP3.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                nextEffect.playOnce();
                 try {
                     picEnemyLbP3.setIcon(new ImageIcon(getClass().getResource("/Images/Skeleton_Warrior.png")));
                 } catch (Exception ex){ ex.printStackTrace(); }
@@ -428,6 +444,7 @@ public class GUIPanels extends JFrames {
         nextBn2P3.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                nextEffect.playOnce();
                 try {
                     picEnemyLbP3.setIcon(new ImageIcon(getClass().getResource("/Images/Dragon.png")));
                 } catch (Exception ex) { ex.printStackTrace(); }
@@ -445,6 +462,10 @@ public class GUIPanels extends JFrames {
         restartBnP3.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                restartEffect.playOnce();
+                battleBGM.stopSound();
+                BGM.reset();
+                BGM.loopContinuously();
                 titleLbP3.setText("BATTLE ONE");
                 statGenBnP2.setText("ROLL");
                 nextBnP3.setVisible(true);
@@ -477,9 +498,7 @@ public class GUIPanels extends JFrames {
         radioMage.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                try { Sound effectThunder = new Sound("Audio/Thunder10.wav");
-                    effectThunder.playOnce();
-                } catch (Exception ex) { ex.printStackTrace();}
+                effectThunder.playOnce();
                 try {
                     picClassLbP2.setIcon(new ImageIcon(getClass().getResource("/Images/Mage.png")));
                 } catch (Exception ex) { ex.printStackTrace();}
@@ -492,10 +511,7 @@ public class GUIPanels extends JFrames {
         radioPaladin.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                try {
-                    Sound effectSwords = new Sound("Audio/Sword6.wav");
-                    effectSwords.playOnce();
-                } catch (Exception ex) {ex.printStackTrace();}
+                effectSwords.playOnce();
                 try {
                     picClassLbP2.setIcon(new ImageIcon(getClass().getResource("/Images/Paladin.png")));
                 } catch (Exception ex) {ex.printStackTrace();}
@@ -507,10 +523,7 @@ public class GUIPanels extends JFrames {
         radioRanger.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                try {
-                    Sound effectBow = new Sound("Audio/Bow4.wav");
-                    effectBow.playOnce();
-                } catch (Exception ex) {ex.printStackTrace(); }
+                effectBow.playOnce();
                 try {
                     picClassLbP2.setIcon(new ImageIcon(getClass().getResource("/Images/Ranger.png")));
                 } catch (Exception ex) {ex.printStackTrace(); }
@@ -522,10 +535,7 @@ public class GUIPanels extends JFrames {
         radioSword.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                try {
-                    Sound effectEquip = new Sound("Audio/Equip1.wav");
-                    effectEquip.playOnce();
-                } catch (Exception ex) {ex.printStackTrace(); }
+                effectEquip1.playOnce();
                 try {
                     picWeaponLbP2.setIcon(new ImageIcon(getClass().getResource("/Images/sword_3.png")));
                 } catch (Exception ex) {ex.printStackTrace(); }
@@ -541,10 +551,7 @@ public class GUIPanels extends JFrames {
         radioStaff.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                try {
-                    Sound effectEquip = new Sound("Audio/Equip2.wav");
-                    effectEquip.playOnce();
-                } catch (Exception ex) {ex.printStackTrace(); }
+                effectEquip2.playOnce();
                 try {
                     picWeaponLbP2.setIcon(new ImageIcon(getClass().getResource("/Images/staff.png")));
                 } catch (Exception ex) {ex.printStackTrace(); }
@@ -560,13 +567,10 @@ public class GUIPanels extends JFrames {
         radioBow.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                    try {
-                        Sound effectEquip = new Sound("Audio/Equip3.wav");
-                        effectEquip.playOnce();
-                    } catch (Exception ex) {ex.printStackTrace(); }
-                    try {
-                        picWeaponLbP2.setIcon(new ImageIcon(getClass().getResource("/Images/Bow2.png")));
-                    } catch (Exception ex) {ex.printStackTrace(); }
+                effectEquip3.playOnce();
+                try {
+                    picWeaponLbP2.setIcon(new ImageIcon(getClass().getResource("/Images/Bow2.png")));
+                } catch (Exception ex) {ex.printStackTrace(); }
                 weaponDescription.setText(" THE BOW\n A BOW AND ARROWS. A RANGERS BEST FRIEND.\n HAS BONUS RANGE MODIFIER.");
                 wSpecialLbP2.setText("Range Modifier");
                 wAttackTfP2.setText("" + bow.getAttack());

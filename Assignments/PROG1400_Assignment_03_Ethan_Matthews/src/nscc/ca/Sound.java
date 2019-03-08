@@ -18,7 +18,7 @@ public class Sound {
                 clip.open(sound);
             }
         }
-        //Catch wrong file format error.
+        //Catches wrong file format exception.
         catch (UnsupportedAudioFileException e) {
             e.printStackTrace();
         }
@@ -26,7 +26,7 @@ public class Sound {
         catch (IOException e) {
             e.printStackTrace();
         }
-        //Catches audio line busy.
+        //Catches audio line busy exception.
         catch (LineUnavailableException e) {
             e.printStackTrace();
         }
@@ -35,8 +35,12 @@ public class Sound {
     //method to play sound clip once.  Resets frame to 0 (beginning of sound.)
     public void playOnce(){
         clip.setFramePosition(0);
-        clip.start();
+        clip.start(); }
+
+    public void reset() {
+        clip.setFramePosition(0);
     }
+
     //method to play sound clip continuously (loop).
     public void loopContinuously(){
         clip.loop(Clip.LOOP_CONTINUOUSLY);

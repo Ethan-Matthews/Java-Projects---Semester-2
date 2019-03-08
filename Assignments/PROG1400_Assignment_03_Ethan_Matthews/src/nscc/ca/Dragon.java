@@ -12,6 +12,10 @@ public class Dragon extends Monster {
     public String getBreathType() {
         return breathType;
     }
+
+    public void setBreathType(String breathType) {
+        this.breathType = breathType; }
+
     //To String formats text for Dragon output in battle screen.
     @Override
     public String toString() {

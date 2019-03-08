@@ -12,6 +12,10 @@ public class Bow extends Equipment{
     public int getRangeModifier() {
         return rangeModifier;
     }
+
+    public void setRangeModifier(int rangeModifier) {
+        this.rangeModifier = rangeModifier; }
+
     //To String formats text for Bow output in Char screen.
     @Override
     public String toString() {

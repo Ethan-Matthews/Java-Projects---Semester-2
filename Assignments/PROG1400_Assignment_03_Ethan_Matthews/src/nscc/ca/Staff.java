@@ -12,6 +12,10 @@ public class Staff extends Equipment{
     public int getSpellCharge() {
         return spellCharge;
     }
+
+    public void setSpellCharge(int spellCharge) {
+        this.spellCharge = spellCharge; }
+
     //To String formats text for Staff output in Char screen.
     @Override
     public String toString() {

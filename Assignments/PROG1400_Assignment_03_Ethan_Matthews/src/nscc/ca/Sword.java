@@ -12,6 +12,9 @@ public class Sword extends Equipment {
     public int getAttackModifier() {
         return attackModifier;
     }
+
+    public void setAttackModifier(int attackModifier) {
+        this.attackModifier = attackModifier; }
     //To String formats text for Sword output in Char screen.
     @Override
     public String toString() {

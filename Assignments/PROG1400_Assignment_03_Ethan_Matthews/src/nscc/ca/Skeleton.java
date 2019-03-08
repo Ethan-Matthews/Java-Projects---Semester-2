@@ -12,7 +12,11 @@ public class Skeleton extends Monster {
     public int getResurrectionCharge() {
         return resurrectionCharge;
     }
-    //To String formats text for Orc output in battle screen.
+
+    public void setResurrectionCharge(int resurrectionCharge) {
+        this.resurrectionCharge = resurrectionCharge; }
+
+    //To String formats text for skeleton output in battle screen.
     @Override
     public String toString() {
         return
