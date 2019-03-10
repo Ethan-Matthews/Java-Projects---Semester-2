@@ -1,4 +1,7 @@
 package nscc.ca;
+
+import javax.swing.*;
+
 //Character Class extends from Player & Character.
 public class Mage extends Player {
 
@@ -8,11 +11,9 @@ public class Mage extends Player {
         super(playerName, equippedWeapon, strength, intelligence, dexterity, vitality);
         this.spellPower = spellPower;
     }
-
     public int getSpellPower() {
         return spellPower;
     }
-
     public void setSpellPower(int spellPower) {
         this.spellPower = spellPower; }
     //To String formats text for Mage output in battle screen.

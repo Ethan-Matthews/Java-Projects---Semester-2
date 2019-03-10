@@ -107,7 +107,7 @@ public class GUIPanels extends JFrames {
 
 
 
-//------FIRST J PANEL SPLASH SCREEN--------------------------------------------
+//------FIRST J PANEL SPLASH SCREEN & CONTENT PANEL---------------------------------------------------------------------
 
         //JPanel for content pane.
         JPanel contentPane = new JPanel();
@@ -136,7 +136,7 @@ public class GUIPanels extends JFrames {
         splashScreen.add(createBnP1);
 
 
-//------SECOND J PANEL CHARACTER GENERATOR--------------------------------------
+//------SECOND J PANEL CHARACTER GENERATOR------------------------------------------------------------------------------
 
         //JPanel for character creation.
         JPanels charCreator = new JPanels();
@@ -191,11 +191,16 @@ public class GUIPanels extends JFrames {
         charCreator.add(wSpecialLbP2);
         //JLabel for class pictures.
         JLabels picClassLbP2 = new JLabels(275, 225, 302, 280, null, 0);
-        charCreator.add(picClassLbP2);
+        try {
+            picClassLbP2.setIcon(new ImageIcon(getClass().getResource("/Images/silhouetteClass.png")));
+            charCreator.add(picClassLbP2);
+        } catch (Exception ex) { ex.printStackTrace();}
         //JLabel for weapon pictures.
         JLabels picWeaponLbP2 = new JLabels(325, 690, 250, 130, null, 0);
-        charCreator.add(picWeaponLbP2);
-
+        try {
+            picWeaponLbP2.setIcon(new ImageIcon(getClass().getResource("/Images/silhouetteWeapon.png")));
+            charCreator.add(picWeaponLbP2);
+        } catch (Exception ex) { ex.printStackTrace();}
 
         //JText Field for Player name.
         JTextFields playerNameTfP2 = new JTextFields(215, 110, 180, 40, null, 24);
@@ -226,14 +231,12 @@ public class GUIPanels extends JFrames {
         JTextFields wSpecialTfP2 = new JTextFields(850, 790, 35, 30, null, 16);
         charCreator.add(wSpecialTfP2);
 
-
         //JButton for stat generation.
         JButtons statGenBnP2 = new JButtons(720, 475, 125, 40, "ROLL", 24);
         charCreator.add(statGenBnP2);
         //JButton for continuing to battle panel
         JButtons battleBnP2 = new JButtons(660, 860, 250, 40,"START BATTLE",24);
         charCreator.add(battleBnP2);
-
 
         //JText Area for class description.
         JTextAreas classDescription = new JTextAreas(15, 515, 562, 110, null, 16);
@@ -242,27 +245,20 @@ public class GUIPanels extends JFrames {
         JTextAreas weaponDescription = new JTextAreas(15, 845, 562, 110, null, 16);
         charCreator.add(weaponDescription);
 
-
         //JRadio Buttons for character classes.
         JRadioButtons radioMage = new JRadioButtons(35, 255, 150, 50," Mage", 20);
         charCreator.add(radioMage);
-
         JRadioButtons radioPaladin = new JRadioButtons(35, 325, 150, 50, " Paladin", 20);
         charCreator.add(radioPaladin);
-
         JRadioButtons radioRanger = new JRadioButtons(35, 395, 150, 50, " Ranger", 20);
         charCreator.add(radioRanger);
-
         //JRadio buttons for weapons.
         JRadioButtons radioSword = new JRadioButtons(35, 690, 120, 30, " Sword", 20);
         charCreator.add(radioSword);
-
         JRadioButtons radioStaff = new JRadioButtons(35, 740, 120, 30, " Staff", 20);
         charCreator.add(radioStaff);
-
         JRadioButtons radioBow = new JRadioButtons(35, 790, 120, 30, " Bow", 20);
         charCreator.add(radioBow);
-
         //Button group for character classes.
         ButtonGroup charClasses = new ButtonGroup();
         charClasses.add(radioMage);
@@ -274,7 +270,7 @@ public class GUIPanels extends JFrames {
         weaponClasses.add(radioStaff);
         weaponClasses.add(radioBow);
 
-//------THIRD J PANEL BATTLE OUTPUT--------------------------------------
+//------THIRD J PANEL BATTLE OUTPUT-------------------------------------------------------------------------------------
 
         //JPanel for battle screen.
         JPanels battleOutput = new JPanels();
@@ -330,7 +326,7 @@ public class GUIPanels extends JFrames {
         restartBnP3.setVisible(false);
         battleOutput.add(restartBnP3);
 
-
+//------ACTION LISTENERS------------------------------------------------------------------------------------------------
         //Splash screen Create button action listener.
         createBnP1.addActionListener(new ActionListener() {
             @Override
@@ -392,7 +388,6 @@ public class GUIPanels extends JFrames {
                             textOutTa3P3.setText(playerChar.toString());
                         }
                     }
-
                     if (radioPaladin.isSelected()) {
                         //Sets image to Paladin on battle screen.
                         try {
@@ -425,7 +420,6 @@ public class GUIPanels extends JFrames {
                             textOutTa3P3.setText(playerChar.toString());
                         }
                     }
-
                     if (radioRanger.isSelected()) {
                         //Sets image to Ranger on battle screen.
                         try {
@@ -457,7 +451,6 @@ public class GUIPanels extends JFrames {
                             textOutTa2P3.setText(playerChar.toString());
                             textOutTa3P3.setText(playerChar.toString());
                         }
-
                     }
                     //Addends Text area output with Orc toString.
                     textOutTaP3.append(orc.toString());
@@ -468,7 +461,6 @@ public class GUIPanels extends JFrames {
                 }
             }
         });
-
         //JButton for Character Stat Generation.
         statGenBnP2.addActionListener(new ActionListener() {
             @Override
@@ -504,7 +496,6 @@ public class GUIPanels extends JFrames {
                 nextBnP3.setVisible(false);
                 textOutTaP3.setVisible(false);
                 textOutTa2P3.setVisible(true);
-
             }
         });
         //JButton next battle panels 2 to 3 action listener.
@@ -526,7 +517,6 @@ public class GUIPanels extends JFrames {
                 restartBnP3.setVisible(true);
                 textOutTa2P3.setVisible(false);
                 textOutTa3P3.setVisible(true);
-
             }
         });
         //JButton restart program action listener.
@@ -563,10 +553,14 @@ public class GUIPanels extends JFrames {
                 charClasses.clearSelection();
                 //Clears weapon type selection.
                 weaponClasses.clearSelection();
-                //Clears character pic.
-                picClassLbP2.setIcon(null);
-                //Clears weapon pic.
-                picWeaponLbP2.setIcon(null);
+                //Defaults character pic.
+                try {
+                    picClassLbP2.setIcon(new ImageIcon(getClass().getResource("/Images/silhouetteClass.png")));
+                } catch (Exception ex) { ex.printStackTrace();}
+                //Defaults weapon pic.
+                try {
+                    picWeaponLbP2.setIcon(new ImageIcon(getClass().getResource("/Images/silhouetteWeapon.png")));
+                } catch (Exception ex) { ex.printStackTrace();}
                 //Clears player name.
                 playerNameTfP2.setText(null);
                 //Clears all text in player stat text fields.
@@ -584,98 +578,106 @@ public class GUIPanels extends JFrames {
                 classDescription.setText(null);
                 //Clears weapon label.
                 weaponLbP2.setText(null);
-
-
             }
         });
-
-
+        //JRadioButton Mage action listener.
         radioMage.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                //Plays sound effect once.
                 effectThunder.playOnce();
+                //Sets Class picture.
                 try {
                     picClassLbP2.setIcon(new ImageIcon(getClass().getResource("/Images/Mage.png")));
                 } catch (Exception ex) { ex.printStackTrace();}
+                //Changes Description in Class Text area.
                 classDescription.setText(" THE MAGE\n A MASTER OF THE ELEMENTS AND ARCANE ARTS. HIGH\n INTELLIGENCE AND DEXTERITY, LOW VITALITY AND STRENGTH.");
-
-
             }
         });
-
+        //JRadioButton Paladin action listener.
         radioPaladin.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                //Plays sound effect once.
                 effectSwords.playOnce();
+                //Sets Class picture.
                 try {
                     picClassLbP2.setIcon(new ImageIcon(getClass().getResource("/Images/Paladin.png")));
                 } catch (Exception ex) {ex.printStackTrace();}
+                //Changes Description in Class Text area.
                 classDescription.setText(" THE PALADIN\n A HOLY WARRIOR BLESSED BY THE LIGHT. HIGH VITALITY AND\n STRENGTH, LOW INTELLIGENCE AND DEXTERITY.");
-
             }
         });
-
+        //JRadioButton Ranger action listener.
         radioRanger.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                //Plays sound effect once.
                 effectBow.playOnce();
+                //Sets Class picture.
                 try {
                     picClassLbP2.setIcon(new ImageIcon(getClass().getResource("/Images/Ranger.png")));
                 } catch (Exception ex) {ex.printStackTrace(); }
+                //Changes Description in Class Text area.
                 classDescription.setText(" THE RANGER\n SKILLED WITH THE USE OF LONG RANGE WEAPONS. HIGH\n DEXTERITY AND INTELLIGENCE, LOW STRENGTH AND VITALITY.");
-
             }
         });
-
+        //JRadioButton Sword action listener.
         radioSword.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                //Plays sound effect once.
                 effectEquip1.playOnce();
+                //Sets weapon picture.
                 try {
                     picWeaponLbP2.setIcon(new ImageIcon(getClass().getResource("/Images/sword_3.png")));
                 } catch (Exception ex) {ex.printStackTrace(); }
+                //Changes Description in weapon Text area.
                 weaponDescription.setText(" THE SWORD\n A ONE HANDED BLADE. MOST BASIC OF MELEE WEAPONS.\n HAS BONUS ATTACK MODIFIER.");
+                //Sets weapon labels and text fields.
                 wSpecialLbP2.setText("Attack Modifier");
                 wAttackTfP2.setText("" + sword.getAttack());
                 wWeightTfP2.setText("" + sword.getWeight());
                 wSpecialTfP2.setText("" + sword.getAttackModifier());
-
             }
         });
-
+        //JRadioButton Staff action listener.
         radioStaff.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                //Plays sound effect once.
                 effectEquip2.playOnce();
+                //Sets weapon picture.
                 try {
                     picWeaponLbP2.setIcon(new ImageIcon(getClass().getResource("/Images/staff.png")));
                 } catch (Exception ex) {ex.printStackTrace(); }
+                //Changes Description in weapon Text area.
                 weaponDescription.setText(" THE STAFF\n A TWO HANDED STAFF. PERFECT FOR CHANNELING ARCANE\n POWER. HAS BONUS SPELL CHARGES.");
+                //Sets weapon labels and text fields.
                 wSpecialLbP2.setText("SpellCharges");
                 wAttackTfP2.setText("" + staff.getAttack());
                 wWeightTfP2.setText("" + staff.getWeight());
                 wSpecialTfP2.setText("" + staff.getSpellCharge());
-
             }
         });
-
+        //JRadioButton Bow action listener.
         radioBow.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                //Plays sound effect once.
                 effectEquip3.playOnce();
+                //Sets weapon picture.
                 try {
                     picWeaponLbP2.setIcon(new ImageIcon(getClass().getResource("/Images/Bow2.png")));
                 } catch (Exception ex) {ex.printStackTrace(); }
+                //Changes Description in weapon Text area.
                 weaponDescription.setText(" THE BOW\n A BOW AND ARROWS. A RANGERS BEST FRIEND.\n HAS BONUS RANGE MODIFIER.");
                 wSpecialLbP2.setText("Range Modifier");
+                //Sets weapon labels and text fields.
                 wAttackTfP2.setText("" + bow.getAttack());
                 wWeightTfP2.setText("" + bow.getWeight());
                 wSpecialTfP2.setText("" + bow.getRangeModifier());
-
             }
         });
-
-
         }
-
     }
