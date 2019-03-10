@@ -14,6 +14,7 @@ public class Mage extends Player {
     public int getSpellPower() {
         return spellPower;
     }
+
     public void setSpellPower(int spellPower) {
         this.spellPower = spellPower; }
     //To String formats text for Mage output in battle screen.
@@ -22,7 +23,8 @@ public class Mage extends Player {
         return
         String.format(" Player: %1$-20s", getPlayerName()) + "\n" +
         " ----------------------------------------------------------------------------------------" + "\n" +
-        String.format("%1$-20s", " Stats: ") + String.format("%1$-20s", " Strength: " + getStrength()) + String.format("%1$-20s", "Vitality: " + getVitality()) + String.format("%1$-20s", "Intelligence: " + getIntelligence()) + String.format("%1$-20s","Dexterity: " + getDexterity()) + "\n" +
-        getEquippedWeapon();
+        String.format("%1$-20s", " Stats: ") + String.format("%1$-20s", " Strength: " + getStrength()) + String.format("%1$-20s", "Vitality: " +
+        getVitality()) + String.format("%1$-20s", "Intelligence: " + getIntelligence()) + String.format("%1$-20s","Dexterity: " + getDexterity()) +
+        "\n" + getEquippedWeapon();
     }
 }
