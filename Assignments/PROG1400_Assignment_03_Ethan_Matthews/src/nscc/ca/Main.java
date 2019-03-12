@@ -1,4 +1,6 @@
 package nscc.ca;
+import nscc.ca.JavaSwingClasses.GUIPanels;
+
 import java.awt.*;
 
 
