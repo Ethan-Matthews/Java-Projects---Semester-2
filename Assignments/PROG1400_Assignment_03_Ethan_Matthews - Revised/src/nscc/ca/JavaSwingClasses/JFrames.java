@@ -75,7 +75,7 @@ public class JFrames extends JFrame {
         //Title for Program Windows.
         setTitle("Fools Quest RPG Character Creator");
         //Sets Default Size for Frame.
-        setSize(1000, 1000);
+        setSize(1300, 1000);
         //Sets card layout.
         setLayout(new CardLayout(0, 0));
 

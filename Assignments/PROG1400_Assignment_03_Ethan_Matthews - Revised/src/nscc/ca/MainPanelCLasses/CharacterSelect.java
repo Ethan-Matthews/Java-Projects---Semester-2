@@ -12,7 +12,6 @@ public class CharacterSelect extends JPanels {
 
     private static JLabels picClassLbP2;
     private static JLabels picWeaponLbP2;
-    private static JLabels weaponLbP2;
     private static JLabels wSpecialLbP2;
 
     private static JTextFields playerNameTfP2;
@@ -23,6 +22,15 @@ public class CharacterSelect extends JPanels {
     private static JTextFields wAttackTfP2;
     private static JTextFields wWeightTfP2;
     private static JTextFields wSpecialTfP2;
+    private static JTextFields attackTfP2;
+    private static JTextFields hitPointsTfP2;
+    private static JTextFields magicPointsTfP2;
+    private static JTextFields attackRangeTfP2;
+    private static JTextFields defenceTfP2;
+    private static JTextFields hitTfP2;
+    private static JTextFields mAttackTfP2;
+    private static JTextFields mDefenceTfP2;
+    private static JTextFields weightTfP2;
 
     private static JButton statGenBnP2;
 
@@ -58,10 +66,10 @@ public class CharacterSelect extends JPanels {
         JLabels CharTypeLbP2 = new JLabels(15, 175, 250, 50, "CHARACTER CLASS", 24);
         add(CharTypeLbP2);
         //JLabel for Character stats.
-        JLabels charStatsLbP2 = new JLabels(600, 175, 280, 50, "CHARACTER STATS", 24);
+        JLabels charStatsLbP2 = new JLabels(800, 175, 280, 50, "CHARACTER STATS", 24);
         add(charStatsLbP2);
         //JLabel for weapon types.
-        weaponLbP2 = new JLabels(15, 640, 250, 50, "WEAPON TYPE", 24);
+        JLabels weaponLbP2 = new JLabels(15, 640, 250, 50, "WEAPON TYPE", 24);
         add(weaponLbP2);
         //JLabel for weapon stats.
         JLabels weaponStatsLbP2 = new JLabels(600, 640, 250, 50, "WEAPON STATS", 24);
@@ -78,6 +86,34 @@ public class CharacterSelect extends JPanels {
         //JLabel for dex.
         JLabels dexterityLbP2 = new JLabels(600, 405, 280, 30, "Dexterity", 20);
         add(dexterityLbP2);
+//--------------------------------
+        JLabels attackLbP2 = new JLabels(940, 255, 150, 30, "Attack", 20);
+        add(attackLbP2);
+
+        JLabels defenceLbP2 = new JLabels(940, 305, 150, 30, "Defence", 20);
+        add(defenceLbP2);
+
+        JLabels hitPointsLbP2 = new JLabels(940, 355, 150, 30, "Hit Points", 20);
+        add(hitPointsLbP2);
+
+        JLabels magicPointsLbP2 = new JLabels(940, 405, 150, 30, "Magic Points", 20);
+        add(magicPointsLbP2);
+
+        JLabels attackRangeLbP2 = new JLabels(940, 455, 180, 30, "Attack Range", 20);
+        add(attackRangeLbP2);
+
+        JLabels hitLbP2 = new JLabels(940, 505, 180, 30, "Hit", 20);
+        add(hitLbP2);
+
+        JLabels mAttackLbP2 = new JLabels(940, 555, 180, 30, "Magic Attack", 20);
+        add(mAttackLbP2);
+
+        JLabels mDefenceLbP2 = new JLabels(940, 605, 180, 30, "Magic Defence", 20);
+        add(mDefenceLbP2);
+
+        JLabels weightLbP2 = new JLabels(940, 655, 180, 30, "Weight Limit", 20);
+        add(weightLbP2);
+
         //JLabel for weapon attack.
         JLabels wAttackLbP2 = new JLabels(600, 690, 280, 30, "Attack", 20);
         add(wAttackLbP2);
@@ -128,6 +164,33 @@ public class CharacterSelect extends JPanels {
         //JText Field for weapon special.
         wSpecialTfP2 = new JTextFields(850, 790, 35, 30, null, 16);
         add(wSpecialTfP2);
+//----------------------
+        attackTfP2 = new JTextFields(1190, 255, 35, 30, null, 16);
+        add(attackTfP2);
+
+        defenceTfP2 = new JTextFields(1190, 305, 35, 30, null, 16);
+        add(defenceTfP2);
+
+        hitPointsTfP2 = new JTextFields(1190, 355, 35, 30, null, 16);
+        add(hitPointsTfP2);
+
+        magicPointsTfP2 = new JTextFields(1190, 405, 35, 30, null, 16);
+        add(magicPointsTfP2);
+
+        attackRangeTfP2 = new JTextFields(1190, 455, 35, 30, null, 16);
+        add(attackRangeTfP2);
+
+        hitTfP2 = new JTextFields(1190, 505, 35, 30, null, 16);
+        add(hitTfP2);
+
+        mAttackTfP2 = new JTextFields(1190, 555, 35, 30, null, 16);
+        add(mAttackTfP2);
+
+        mDefenceTfP2 = new JTextFields(1190, 605, 35, 30, null, 16);
+        add(mDefenceTfP2);
+
+        weightTfP2 = new JTextFields(1190, 655, 35, 30, null, 16);
+        add(weightTfP2);
     
         //JButton for stat generation.
         statGenBnP2 = new JButtons(720, 475, 125, 40, "ROLL", 24);
@@ -419,8 +482,6 @@ public class CharacterSelect extends JPanels {
     static JLabels getPicClassLbP2() { return picClassLbP2; }
 
     static JLabels getPicWeaponLbP2() { return picWeaponLbP2; }
-
-    static JLabels getWeaponLbP2() { return weaponLbP2; }
 
     private static JLabels getWSpecialLbP2() { return wSpecialLbP2; }
 

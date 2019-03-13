@@ -175,8 +175,6 @@ public class BattleOutput extends JPanels {
             getWeaponDescription().setText(null);
             //Clears all text in class description text areas.
             getClassDescription().setText(null);
-            //Clears weapon label.
-            getWeaponLbP2().setText(null);
             }
         });
     }
