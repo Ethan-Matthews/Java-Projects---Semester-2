@@ -1,7 +1,6 @@
 package nscc.ca.CharacterClasses;
 
 import nscc.ca.EquipmentClasses.Equipment;
-
 import javax.swing.*;
 
 //Character Class extends from Player & Character.
@@ -10,6 +9,7 @@ public class Ranger extends Player {
     private int rangeBonus;
     private ImageIcon rangerImage;
     private String classDescription;
+
     //Constructor.
     public Ranger(String playerName, Equipment equippedWeapon, int strength, int intelligence, int dexterity, int vitality, int rangeBonus) {
         super(playerName, equippedWeapon, strength, intelligence, dexterity, vitality);

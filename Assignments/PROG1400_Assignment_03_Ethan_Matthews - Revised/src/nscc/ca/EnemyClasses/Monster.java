@@ -11,20 +11,15 @@ public abstract class Monster extends Character {
         super(strength, intelligence, dexterity, vitality);
         this.monsterName = monsterName;
     }
-
+    //Getters.
     public String getMonsterName() {
         return monsterName;
     }
-
-    public void setMonsterName(String monsterName) {
-        this.monsterName = monsterName; }
+    //Setters.
+    public void setMonsterName(String monsterName) { this.monsterName = monsterName; }
 
     @Override
-    public String toString() {
-        return "Monster{" +
-                "monsterName='" + monsterName + '\'' +
-                '}';
-    }
+    public abstract String toString();
 
 
 

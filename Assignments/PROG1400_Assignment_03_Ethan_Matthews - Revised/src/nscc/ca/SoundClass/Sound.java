@@ -25,7 +25,7 @@ public class Sound {
 
     }
     //method to play sound clip once.  Resets frame to 0 (beginning of sound.)
-    public void playOnce(){
+    public void playOnce() {
         clip.setFramePosition(0);
         clip.start(); }
 

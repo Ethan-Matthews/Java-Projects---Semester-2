@@ -16,9 +16,7 @@ public class Sword extends Equipment {
         this.weaponDescription = " THE SWORD\n A ONE HANDED BLADE. MOST BASIC OF MELEE WEAPONS.\n HAS BONUS ATTACK MODIFIER.";
     }
     //Getters.
-    public int getAttackModifier() {
-        return attackModifier;
-    }
+    public int getAttackModifier() { return attackModifier; }
 
     public ImageIcon getSwordImage() { return swordImage; }
 

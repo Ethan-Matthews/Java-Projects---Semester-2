@@ -46,12 +46,5 @@ public abstract class Character {
     }
 
     @Override
-    public String toString() {
-        return "Character{" +
-                "strength=" + strength +
-                ", intelligence=" + intelligence +
-                ", dexterity=" + dexterity +
-                ", vitality=" + vitality +
-                '}';
-    }
+    public abstract String toString();
 }

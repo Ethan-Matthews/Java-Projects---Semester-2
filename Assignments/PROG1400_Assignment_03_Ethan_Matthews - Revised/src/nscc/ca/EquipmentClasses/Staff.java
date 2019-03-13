@@ -16,9 +16,7 @@ public class Staff extends Equipment{
         this.weaponDescription = " THE STAFF\n A TWO HANDED STAFF. PERFECT FOR CHANNELING ARCANE\n POWER. HAS BONUS SPELL CHARGES.";
     }
     //Getters.
-    public int getSpellCharge() {
-        return spellCharge;
-    }
+    public int getSpellCharge() { return spellCharge; }
 
     public ImageIcon getStaffImage() { return staffImage; }
 

@@ -2,23 +2,13 @@ package nscc.ca.JavaSwingClasses;
 
 import javax.swing.*;
 import java.awt.*;
+
 //Custom Class for JTextFields extends JTextField.
 public class JTextFields extends JTextField {
 
-    private int xPos;
-    private int yPos;
-    private int width;
-    private int height;
-    private String text;
-    private int fontSize;
     //Constructor
     public JTextFields(int xPos, int yPos, int width, int height, String text, int fontSize) {
-        this.xPos = xPos;
-        this.yPos = yPos;
-        this.width = width;
-        this.height = height;
-        this.text = text;
-        this.fontSize = fontSize;
+
         //Set bounds for label.
         this.setBounds(xPos, yPos, width, height);
         //Sets Text to sting provided.

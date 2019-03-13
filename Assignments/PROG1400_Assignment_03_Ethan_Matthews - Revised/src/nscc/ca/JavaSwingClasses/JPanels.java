@@ -2,6 +2,7 @@ package nscc.ca.JavaSwingClasses;
 
 import javax.swing.*;
 import java.awt.*;
+
 //Custom Class extends from JPanel.
 public class JPanels extends JPanel {
 

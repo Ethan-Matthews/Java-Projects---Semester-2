@@ -1,7 +1,6 @@
 package nscc.ca.CharacterClasses;
 
 import nscc.ca.EquipmentClasses.Equipment;
-
 import javax.swing.*;
 
 //Character Class extends from Player & Character.
@@ -10,6 +9,7 @@ public class Mage extends Player {
     private int spellPower;
     private ImageIcon mageImage;
     private String classDescription;
+
     //Constructor.
     public Mage(String playerName, Equipment equippedWeapon, int strength, int intelligence, int dexterity, int vitality, int spellPower) {
         super(playerName, equippedWeapon, strength, intelligence, dexterity, vitality);
@@ -17,6 +17,7 @@ public class Mage extends Player {
         this.mageImage = new ImageIcon(this.getClass().getResource("/Images/Mage.png"));
         this.classDescription = " THE MAGE\n A MASTER OF THE ELEMENTS AND ARCANE ARTS. HIGH\n INTELLIGENCE AND DEXTERITY, LOW VITALITY AND STRENGTH.";
     }
+
     public int getSpellPower() {
         return spellPower;
     }

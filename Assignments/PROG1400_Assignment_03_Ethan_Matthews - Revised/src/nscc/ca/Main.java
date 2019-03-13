@@ -1,8 +1,7 @@
 package nscc.ca;
+
 import nscc.ca.JavaSwingClasses.JFrames;
-
 import java.awt.*;
-
 
 public class Main {
 

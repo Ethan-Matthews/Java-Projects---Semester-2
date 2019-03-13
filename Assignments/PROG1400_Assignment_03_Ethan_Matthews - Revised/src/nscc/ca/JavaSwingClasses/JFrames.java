@@ -1,21 +1,15 @@
 package nscc.ca.JavaSwingClasses;
 
-import nscc.ca.CharacterClasses.Mage;
-import nscc.ca.CharacterClasses.Paladin;
-import nscc.ca.CharacterClasses.Ranger;
-import nscc.ca.EnemyClasses.Dragon;
-import nscc.ca.EnemyClasses.Orc;
-import nscc.ca.EnemyClasses.Skeleton;
-import nscc.ca.EquipmentClasses.Bow;
-import nscc.ca.EquipmentClasses.Staff;
-import nscc.ca.EquipmentClasses.Sword;
-import nscc.ca.MainPanelCLasses.BattleOutput;
-import nscc.ca.MainPanelCLasses.CharacterSelect;
-import nscc.ca.MainPanelCLasses.SplashScreen;
+import nscc.ca.CharacterClasses.*;
+import nscc.ca.EnemyClasses.*;
+import nscc.ca.EquipmentClasses.*;
+import nscc.ca.MainPanelCLasses.*;
 import nscc.ca.SoundClass.Sound;
 
 import javax.swing.*;
-import java.awt.*;
+import java.awt.CardLayout;
+import java.awt.Dimension;
+import java.awt.Toolkit;
 
 public class JFrames extends JFrame {
 
@@ -49,18 +43,18 @@ public class JFrames extends JFrame {
 
     public JFrames() {
         //Creates new Sound effect Objects
-        restartEffect = new Sound("Audio/Applause1.wav");
-        nextEffect = new Sound("Audio/BattleStart.wav");
-        effectEquip1 = new Sound("Audio/Equip1.wav");
-        effectEquip2 = new Sound("Audio/Equip2.wav");
-        effectEquip3 = new Sound("Audio/Equip3.wav");
-        effectBow = new Sound("Audio/Bow4.wav");
-        effectSwords = new Sound("Audio/Sword6.wav");
-        effectThunder = new Sound("Audio/Thunder10.wav");
-        effectDice = new Sound("Audio/Roll_Dice.wav");
-        effectGate = new Sound("Audio/Gate2.wav");
-        battleBGM = new Sound("Audio/Battle5.wav");
-        BGM = new Sound("Audio/Theme1.wav");
+        restartEffect = new Sound("src/Audio/Applause1.wav");
+        nextEffect = new Sound("src/Audio/BattleStart.wav");
+        effectEquip1 = new Sound("src/Audio/Equip1.wav");
+        effectEquip2 = new Sound("src/Audio/Equip2.wav");
+        effectEquip3 = new Sound("src/Audio/Equip3.wav");
+        effectBow = new Sound("src/Audio/Bow4.wav");
+        effectSwords = new Sound("src/Audio/Sword6.wav");
+        effectThunder = new Sound("src/Audio/Thunder10.wav");
+        effectDice = new Sound("src/Audio/Roll_Dice.wav");
+        effectGate = new Sound("src/Audio/Gate2.wav");
+        battleBGM = new Sound("src/Audio/Battle5.wav");
+        BGM = new Sound("src/Audio/Theme1.wav");
 
         //Creates Default Character Classes.
         aMage = new Mage(null, null, 0, 0, 0, 0, randomGenerator());
@@ -85,7 +79,7 @@ public class JFrames extends JFrame {
         //Sets card layout.
         setLayout(new CardLayout(0, 0));
 
-        nscc.ca.MainPanelCLasses.SplashScreen splashScreenP1 = new SplashScreen();
+        SplashScreen splashScreenP1 = new SplashScreen();
         characterSelectP2 = new CharacterSelect();
         battleScreenP3 = new BattleOutput();
         add(splashScreenP1);

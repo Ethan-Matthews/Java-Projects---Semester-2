@@ -1,4 +1,5 @@
 package nscc.ca.EquipmentClasses;
+
 //Custom abstract Superclass For equipment.
 public abstract class Equipment {
 
@@ -25,13 +26,5 @@ public abstract class Equipment {
         this.attack = attack; }
 
     @Override
-    public String toString() {
-        return "Equipment{" +
-                "weight=" + weight +
-                ", attack=" + attack +
-                '}';
-    }
-
-
-
+    public abstract String toString();
 }

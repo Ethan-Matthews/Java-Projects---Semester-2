@@ -16,9 +16,7 @@ public class Bow extends Equipment{
         this.weaponDescription = " THE BOW\n A BOW AND ARROWS. A RANGERS BEST FRIEND.\n HAS BONUS RANGE MODIFIER.";
     }
     //Getters.
-    public int getRangeModifier() {
-        return rangeModifier;
-    }
+    public int getRangeModifier() { return rangeModifier; }
 
     public ImageIcon getBowImage() { return bowImage; }
 

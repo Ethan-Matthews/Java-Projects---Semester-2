@@ -1,16 +1,10 @@
 package nscc.ca.MainPanelCLasses;
 
-import nscc.ca.JavaSwingClasses.JButtons;
-import nscc.ca.JavaSwingClasses.JLabels;
-import nscc.ca.JavaSwingClasses.JPanels;
-import nscc.ca.JavaSwingClasses.JTextAreas;
-
+import nscc.ca.JavaSwingClasses.*;
 import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
+import java.awt.event.*;
 import static nscc.ca.MainPanelCLasses.CharacterSelect.*;
 import static nscc.ca.JavaSwingClasses.JFrames.*;
 
@@ -83,111 +77,108 @@ public class BattleOutput extends JPanels {
         restartBnP3.setVisible(false);
         add(restartBnP3);
 
-
-
-            //JButton next battle panels 1 to 2 action listener.
-            nextBnP3.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                getNextEffect().playOnce();
-                //Sets new enemy picture.
-                try {
-                    picEnemyLbP3.setIcon(new ImageIcon(getClass().getResource("/Images/Skeleton_Warrior.png")));
-                } catch (Exception ex){ ex.printStackTrace(); }
-                //Changes Title.
-                titleLbP3.setText("BATTLE TWO");
-                //New monster type.
-                monsterTypeLbP3.setText("Monster: Skeleton");
-                //Appends skeleton toString to output text area.
-                textOutTa2P3.append(getASkeleton().toString());
-                //Changes visibility of battle panels and buttons.
-                nextBn2P3.setVisible(true);
-                nextBnP3.setVisible(false);
-                textOutTaP3.setVisible(false);
-                textOutTa2P3.setVisible(true);
+        //JButton next battle panels 1 to 2 action listener.
+        nextBnP3.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            getNextEffect().playOnce();
+            //Sets new enemy picture.
+            try {
+                picEnemyLbP3.setIcon(new ImageIcon(getClass().getResource("/Images/Skeleton_Warrior.png")));
+            } catch (Exception ex){ ex.printStackTrace(); }
+            //Changes Title.
+            titleLbP3.setText("BATTLE TWO");
+            //New monster type.
+            monsterTypeLbP3.setText("Monster: Skeleton");
+            //Appends skeleton toString to output text area.
+            textOutTa2P3.append(getASkeleton().toString());
+            //Changes visibility of battle panels and buttons.
+            nextBn2P3.setVisible(true);
+            nextBnP3.setVisible(false);
+            textOutTaP3.setVisible(false);
+            textOutTa2P3.setVisible(true);
             }
         });
         //JButton next battle panels 2 to 3 action listener.
-            nextBn2P3.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                getNextEffect().playOnce();
-                //Sets new enemy picture.
-                try {
-                    picEnemyLbP3.setIcon(new ImageIcon(getClass().getResource("/Images/Dragon.png")));
-                } catch (Exception ex) { ex.printStackTrace(); }
-                //Changes Title.
-                titleLbP3.setText("FINAL BATTLE");
-                //New monster type.
-                monsterTypeLbP3.setText("Monster: Dragon");
-                textOutTa3P3.append(getADragon().toString());
-                //Changes visibility of battle panels and buttons.
-                nextBn2P3.setVisible(false);
-                restartBnP3.setVisible(true);
-                textOutTa2P3.setVisible(false);
-                textOutTa3P3.setVisible(true);
+        nextBn2P3.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            getNextEffect().playOnce();
+            //Sets new enemy picture.
+            try {
+                picEnemyLbP3.setIcon(new ImageIcon(getClass().getResource("/Images/Dragon.png")));
+            } catch (Exception ex) { ex.printStackTrace(); }
+            //Changes Title.
+            titleLbP3.setText("FINAL BATTLE");
+            //New monster type.
+            monsterTypeLbP3.setText("Monster: Dragon");
+            textOutTa3P3.append(getADragon().toString());
+            //Changes visibility of battle panels and buttons.
+            nextBn2P3.setVisible(false);
+            restartBnP3.setVisible(true);
+            textOutTa2P3.setVisible(false);
+            textOutTa3P3.setVisible(true);
             }
         });
         //JButton restart program action listener.
-            restartBnP3.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                //Player restart sound.
-                getRestartEffect().playOnce();
-                //stops battle BGM.
-                getBattleBGM().stopSound();
-                //Resets BGM to frame 0.
-                getBGM().reset();
-                //Starts BGM in continuous loop.
-                getBGM().loopContinuously();
-                //Resets Tile on battle panel one.
-                titleLbP3.setText("BATTLE ONE");
-                //resets text of character stat button.
-                getStatGenBnP2().setText("ROLL");
-                //Sets next button 1 to visible.
-                nextBnP3.setVisible(true);
-                //Sets Text area 1 output visible.
-                textOutTaP3.setVisible(true);
-                //Sets text area 2 invisible.
-                textOutTa2P3.setVisible(false);
-                //Sets text area 3 invisible.
-                textOutTa3P3.setVisible(false);
-                //Sets restart button invisible.
-                restartBnP3.setVisible(false);
-                //Sets battle output panel 1 invisible.
-                getBattleScreenP3().setVisible(false);
-                //Clears char class selection.
-                getCharClasses().clearSelection();
-                //Clears weapon type selection.
-                getWeaponClasses().clearSelection();
-                //Defaults character pic.
-                try {
-                    getPicClassLbP2().setIcon(new ImageIcon(getClass().getResource("/Images/silhouetteClass.png")));
-                } catch (Exception ex) { ex.printStackTrace();}
-                //Defaults weapon pic.
-                try {
-                    getPicWeaponLbP2().setIcon(new ImageIcon(getClass().getResource("/Images/silhouetteWeapon.png")));
-                } catch (Exception ex) { ex.printStackTrace();}
-                //Clears player name.
-                getPlayerNameTfP2().setText(null);
-                //Clears all text in player stat text fields.
-                getStrengthTfP2().setText(null);
-                getVitalityTfP2().setText(null);
-                getIntelligenceTfP2().setText(null);
-                getDexterityTfP2().setText(null);
-                //Clears all text in weapon stat text fields.
-                getWAttackTfP2().setText(null);
-                getWWeightTfP2().setText(null);
-                getWSpecialTfP2().setText(null);
-                //Clears all text in weapon description text areas.
-                getWeaponDescription().setText(null);
-                //Clears all text in class description text areas.
-                getClassDescription().setText(null);
-                //Clears weapon label.
-                getWeaponLbP2().setText(null);
+        restartBnP3.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            //Player restart sound.
+            getRestartEffect().playOnce();
+            //stops battle BGM.
+            getBattleBGM().stopSound();
+            //Resets BGM to frame 0.
+            getBGM().reset();
+            //Starts BGM in continuous loop.
+            getBGM().loopContinuously();
+            //Resets Tile on battle panel one.
+            titleLbP3.setText("BATTLE ONE");
+            //resets text of character stat button.
+            getStatGenBnP2().setText("ROLL");
+            //Sets next button 1 to visible.
+            nextBnP3.setVisible(true);
+            //Sets Text area 1 output visible.
+            textOutTaP3.setVisible(true);
+            //Sets text area 2 invisible.
+            textOutTa2P3.setVisible(false);
+            //Sets text area 3 invisible.
+            textOutTa3P3.setVisible(false);
+            //Sets restart button invisible.
+            restartBnP3.setVisible(false);
+            //Sets battle output panel 1 invisible.
+            getBattleScreenP3().setVisible(false);
+            //Clears char class selection.
+            getCharClasses().clearSelection();
+            //Clears weapon type selection.
+            getWeaponClasses().clearSelection();
+            //Defaults character pic.
+            try {
+                getPicClassLbP2().setIcon(new ImageIcon(getClass().getResource("/Images/silhouetteClass.png")));
+            } catch (Exception ex) { ex.printStackTrace();}
+            //Defaults weapon pic.
+            try {
+                getPicWeaponLbP2().setIcon(new ImageIcon(getClass().getResource("/Images/silhouetteWeapon.png")));
+            } catch (Exception ex) { ex.printStackTrace();}
+            //Clears player name.
+            getPlayerNameTfP2().setText(null);
+            //Clears all text in player stat text fields.
+            getStrengthTfP2().setText(null);
+            getVitalityTfP2().setText(null);
+            getIntelligenceTfP2().setText(null);
+            getDexterityTfP2().setText(null);
+            //Clears all text in weapon stat text fields.
+            getWAttackTfP2().setText(null);
+            getWWeightTfP2().setText(null);
+            getWSpecialTfP2().setText(null);
+            //Clears all text in weapon description text areas.
+            getWeaponDescription().setText(null);
+            //Clears all text in class description text areas.
+            getClassDescription().setText(null);
+            //Clears weapon label.
+            getWeaponLbP2().setText(null);
             }
         });
-
     }
 
     static JLabels getClassChoiceLbP3() {

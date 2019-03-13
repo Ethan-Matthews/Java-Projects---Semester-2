@@ -13,13 +13,11 @@ public abstract class Player extends Character{
         this.playerName = playerName;
         this.equippedWeapon = equippedWeapon;
     }
-
-    public String getPlayerName() {
-        return playerName;
-    }
+    //Getters.
+    public String getPlayerName() { return playerName; }
 
     public Equipment getEquippedWeapon() { return equippedWeapon; }
-
+    //Setters.
     public void setPlayerName(String playerName) {
         this.playerName = playerName;
     }
@@ -29,10 +27,5 @@ public abstract class Player extends Character{
     }
 
     @Override
-    public String toString() {
-        return "Player{" +
-                "playerName='" + playerName + '\'' +
-                ", equippedWeapon=" + equippedWeapon +
-                '}';
-    }
+    public abstract String toString();
 }

@@ -1,7 +1,6 @@
 package nscc.ca.CharacterClasses;
 
 import nscc.ca.EquipmentClasses.Equipment;
-
 import javax.swing.*;
 
 //Character Class extends from Player & Character.
@@ -10,6 +9,7 @@ public class Paladin extends Player {
     private int healBonus;
     private ImageIcon paladinImage;
     private String classDescription;
+
     //Constructor.
     public Paladin(String playerName, Equipment equippedWeapon, int strength, int intelligence, int dexterity, int vitality, int healBonus) {
         super(playerName, equippedWeapon, strength, intelligence, dexterity, vitality);
