@@ -167,6 +167,18 @@ public class BattleOutput extends JPanels {
             getVitalityTfP2().setText(null);
             getIntelligenceTfP2().setText(null);
             getDexterityTfP2().setText(null);
+            getAgilityTfP2().setText(null);
+            getAttackTfP2().setText(null);
+            getDefenceTfP2().setText(null);
+            getHitPointsTfP2().setText(null);
+            getMagicPointsTfP2().setText(null);
+            getmAttackTfP2().setText(null);
+            getmDefenceTfP2().setText(null);
+            getAttackRangeTfP2().setText(null);
+            getHitTfP2().setText(null);
+            getWeightTfP2().setText(null);
+            getDodgeTfP2().setText(null);
+            getCriticalTfP2().setText(null);
             //Clears all text in weapon stat text fields.
             getWAttackTfP2().setText(null);
             getWWeightTfP2().setText(null);

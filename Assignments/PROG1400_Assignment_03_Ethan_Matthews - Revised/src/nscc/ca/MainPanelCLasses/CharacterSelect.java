@@ -57,7 +57,7 @@ public class CharacterSelect extends JPanels {
         titleLbP2.setHorizontalAlignment(JButton.LEFT);
         add(titleLbP2);
         //JLabel for title text underline.
-        JLabels titleULbP2 = new JLabels(15, 80, 960, 1, null, 0);
+        JLabels titleULbP2 = new JLabels(15, 80, 1265, 1, null, 0);
         titleULbP2.setBackground(Color.WHITE);
         Border border5 = BorderFactory.createLineBorder(Color.WHITE, 10);
         titleULbP2.setBorder(border5);
@@ -135,19 +135,21 @@ public class CharacterSelect extends JPanels {
         //JLabel for weapon special.
         wSpecialLbP2 = new JLabels(620, 790, 280, 30, "Special", 20);
         add(wSpecialLbP2);
+
         //JLabel for class pictures.
         picClassLbP2 = new JLabels(275, 225, 302, 280, null, 0);
         try {
             picClassLbP2.setIcon(new ImageIcon(getClass().getResource("/Images/silhouetteClass.png")));
             add(picClassLbP2);
         } catch (Exception ex) { ex.printStackTrace();}
+
         //JLabel for weapon pictures.
         picWeaponLbP2 = new JLabels(325, 690, 250, 130, null, 0);
         try {
             picWeaponLbP2.setIcon(new ImageIcon(getClass().getResource("/Images/silhouetteWeapon.png")));
             add(picWeaponLbP2);
         } catch (Exception ex) { ex.printStackTrace();}
-    
+
         //JText Field for Player name.
         playerNameTfP2 = new JTextFields(215, 110, 280, 40, null, 24);
         //Sets so user can enter name.
@@ -217,7 +219,7 @@ public class CharacterSelect extends JPanels {
         statGenBnP2 = new JButtons(700, 525, 125, 40, "ROLL", 24);
         add(statGenBnP2);
         //JButton for continuing to battle panel
-        JButtons battleBnP2 = new JButtons(960, 810, 250, 40,"START BATTLE",24);
+        JButtons battleBnP2 = new JButtons(620, 855, 620, 40,"START BATTLE",24);
         add(battleBnP2);
     
         //JText Area for class description.
@@ -534,6 +536,36 @@ public class CharacterSelect extends JPanels {
     static JTextFields getDexterityTfP2() { return dexterityTfP2; }
 
     static JTextFields getAgilityTfP2() { return agilityTfP2; }
+
+    public static JLabels getwSpecialLbP2() { return wSpecialLbP2; }
+
+    public static JTextFields getwAttackTfP2() { return wAttackTfP2; }
+
+    public static JTextFields getwWeightTfP2() { return wWeightTfP2; }
+
+    public static JTextFields getwSpecialTfP2() { return wSpecialTfP2; }
+
+    public static JTextFields getAttackTfP2() { return attackTfP2; }
+
+    public static JTextFields getHitPointsTfP2() { return hitPointsTfP2; }
+
+    public static JTextFields getMagicPointsTfP2() { return magicPointsTfP2; }
+
+    public static JTextFields getAttackRangeTfP2() { return attackRangeTfP2; }
+
+    public static JTextFields getDefenceTfP2() { return defenceTfP2; }
+
+    public static JTextFields getHitTfP2() { return hitTfP2; }
+
+    public static JTextFields getmAttackTfP2() { return mAttackTfP2; }
+
+    public static JTextFields getmDefenceTfP2() { return mDefenceTfP2; }
+
+    public static JTextFields getWeightTfP2() { return weightTfP2; }
+
+    public static JTextFields getDodgeTfP2() { return dodgeTfP2; }
+
+    public static JTextFields getCriticalTfP2() { return criticalTfP2; }
 
     static JTextFields getWAttackTfP2() { return wAttackTfP2; }
 
