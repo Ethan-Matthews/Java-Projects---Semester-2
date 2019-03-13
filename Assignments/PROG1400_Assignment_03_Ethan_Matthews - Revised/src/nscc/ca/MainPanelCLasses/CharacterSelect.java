@@ -1,14 +1,16 @@
-package nscc.ca.JavaSwingClasses;
+package nscc.ca.MainPanelCLasses;
+
+import nscc.ca.JavaSwingClasses.*;
 
 import javax.swing.*;
 import javax.swing.border.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import static nscc.ca.JavaSwingClasses.BattleOutput.*;
+import static nscc.ca.MainPanelCLasses.BattleOutput.*;
 import static nscc.ca.JavaSwingClasses.JFrames.*;
 
-class CharacterSelect extends JPanels {
+public class CharacterSelect extends JPanels {
 
     private static JLabels picClassLbP2;
     private static JLabels picWeaponLbP2;
@@ -39,7 +41,7 @@ class CharacterSelect extends JPanels {
     private static JRadioButtons radioStaff;
     private static JRadioButtons radioBow;
 
-    CharacterSelect() {
+    public CharacterSelect() {
         setVisible(false);
         //JLabel for main title of character creation.
         JLabels titleLbP2 = new JLabels(15, 10, 960, 70, "CHARACTER GENERATION", 48);
@@ -325,10 +327,10 @@ class CharacterSelect extends JPanels {
                 //Changes Description in weapon Text area.
                 getWeaponDescription().setText(getASword().getWeaponDescription());
                 //Gets weapon labels and text fields.
-                getwSpecialTfP2().setText("Attack Modifier");
-                getwAttackTfP2().setText("" + getASword().getAttack());
-                getwWeightTfP2().setText("" + getASword().getWeight());
-                getwSpecialTfP2().setText("" + getASword().getAttackModifier());
+                getWSpecialTfP2().setText("Attack Modifier");
+                getWAttackTfP2().setText("" + getASword().getAttack());
+                getWWeightTfP2().setText("" + getASword().getWeight());
+                getWSpecialTfP2().setText("" + getASword().getAttackModifier());
             }
         });
         //JRadioButton Staff action listener.
@@ -342,10 +344,10 @@ class CharacterSelect extends JPanels {
                 //Changes Description in weapon Text area.
                 getWeaponDescription().setText(getAStaff().getWeaponDescription());
                 //Sets weapon labels and text fields.
-                getwSpecialLbP2().setText("SpellCharges");
-                getwAttackTfP2().setText("" + getAStaff().getAttack());
-                getwWeightTfP2().setText("" + getAStaff().getWeight());
-                getwSpecialTfP2().setText("" + getAStaff().getSpellCharge());
+                getWSpecialLbP2().setText("SpellCharges");
+                getWAttackTfP2().setText("" + getAStaff().getAttack());
+                getWWeightTfP2().setText("" + getAStaff().getWeight());
+                getWSpecialTfP2().setText("" + getAStaff().getSpellCharge());
             }
         });
         //JRadioButton Bow action listener.
@@ -358,11 +360,11 @@ class CharacterSelect extends JPanels {
                 getPicWeaponLbP2().setIcon(getABow().getBowImage());
                 //Changes Description in weapon Text area.
                 getWeaponDescription().setText(getABow().getWeaponDescription());
-                getwSpecialLbP2().setText("Range Modifier");
+                getWSpecialLbP2().setText("Range Modifier");
                 //Sets weapon labels and text fields.
-                getwAttackTfP2().setText("" + getABow().getAttack());
-                getwWeightTfP2().setText("" + getABow().getWeight());
-                getwSpecialTfP2().setText("" + getABow().getRangeModifier());
+                getWAttackTfP2().setText("" + getABow().getAttack());
+                getWWeightTfP2().setText("" + getABow().getWeight());
+                getWSpecialTfP2().setText("" + getABow().getRangeModifier());
             }
         });
     }
@@ -422,7 +424,7 @@ class CharacterSelect extends JPanels {
 
     static JLabels getWeaponLbP2() { return weaponLbP2; }
 
-    private static JLabels getwSpecialLbP2() { return wSpecialLbP2; }
+    private static JLabels getWSpecialLbP2() { return wSpecialLbP2; }
 
     static JTextFields getPlayerNameTfP2() { return playerNameTfP2; }
 
@@ -434,11 +436,11 @@ class CharacterSelect extends JPanels {
 
     static JTextFields getDexterityTfP2() { return dexterityTfP2; }
 
-    static JTextFields getwAttackTfP2() { return wAttackTfP2; }
+    static JTextFields getWAttackTfP2() { return wAttackTfP2; }
 
-    static JTextFields getwWeightTfP2() { return wWeightTfP2; }
+    static JTextFields getWWeightTfP2() { return wWeightTfP2; }
 
-    static JTextFields getwSpecialTfP2() { return wSpecialTfP2; }
+    static JTextFields getWSpecialTfP2() { return wSpecialTfP2; }
 
     static JButton getStatGenBnP2() { return statGenBnP2; }
 

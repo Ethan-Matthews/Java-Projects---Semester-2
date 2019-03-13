@@ -18,16 +18,8 @@ public class Sound {
                 clip.open(sound);
             }
         }
-        //Catches wrong file format exception.
-        catch (UnsupportedAudioFileException e) {
-            e.printStackTrace();
-        }
-        //Catches any IO file exception.
-        catch (IOException e) {
-            e.printStackTrace();
-        }
-        //Catches audio line busy exception.
-        catch (LineUnavailableException e) {
+        //Catches wrong file format exception, IO file exception, audio line busy exception.
+        catch (UnsupportedAudioFileException | IOException | LineUnavailableException e) {
             e.printStackTrace();
         }
 

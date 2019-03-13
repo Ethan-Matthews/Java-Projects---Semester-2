@@ -1,4 +1,9 @@
-package nscc.ca.JavaSwingClasses;
+package nscc.ca.MainPanelCLasses;
+
+import nscc.ca.JavaSwingClasses.JButtons;
+import nscc.ca.JavaSwingClasses.JLabels;
+import nscc.ca.JavaSwingClasses.JPanels;
+import nscc.ca.JavaSwingClasses.JTextAreas;
 
 import javax.swing.*;
 import javax.swing.border.Border;
@@ -6,7 +11,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import static nscc.ca.JavaSwingClasses.CharacterSelect.*;
+import static nscc.ca.MainPanelCLasses.CharacterSelect.*;
 import static nscc.ca.JavaSwingClasses.JFrames.*;
 
 public class BattleOutput extends JPanels {
@@ -24,7 +29,7 @@ public class BattleOutput extends JPanels {
     private static JTextAreas textOutTa2P3;
     private static JTextAreas textOutTa3P3;
 
-    BattleOutput() {
+    public BattleOutput() {
         setVisible(false);
         //Set Panel layout.
         setLayout(null);
@@ -171,9 +176,9 @@ public class BattleOutput extends JPanels {
                 getIntelligenceTfP2().setText(null);
                 getDexterityTfP2().setText(null);
                 //Clears all text in weapon stat text fields.
-                getwAttackTfP2().setText(null);
-                getwWeightTfP2().setText(null);
-                getwSpecialTfP2().setText(null);
+                getWAttackTfP2().setText(null);
+                getWWeightTfP2().setText(null);
+                getWSpecialTfP2().setText(null);
                 //Clears all text in weapon description text areas.
                 getWeaponDescription().setText(null);
                 //Clears all text in class description text areas.
@@ -183,18 +188,6 @@ public class BattleOutput extends JPanels {
             }
         });
 
-    }
-
-    public static JButtons getNextBnP3() {
-        return nextBnP3;
-    }
-
-    public static JButtons getNextBn2P3() {
-        return nextBn2P3;
-    }
-
-    public static JButtons getRestartBnP3() {
-        return restartBnP3;
     }
 
     static JLabels getClassChoiceLbP3() {

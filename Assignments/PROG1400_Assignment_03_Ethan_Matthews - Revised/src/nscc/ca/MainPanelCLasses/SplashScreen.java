@@ -1,4 +1,8 @@
-package nscc.ca.JavaSwingClasses;
+package nscc.ca.MainPanelCLasses;
+
+import nscc.ca.JavaSwingClasses.JButtons;
+import nscc.ca.JavaSwingClasses.JLabels;
+import nscc.ca.JavaSwingClasses.JPanels;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -7,10 +11,10 @@ import java.awt.event.ActionListener;
 import static nscc.ca.JavaSwingClasses.JFrames.*;
 
 //Custom JFrames class extends JFrame.
-class SplashScreen extends JPanels {
+public class SplashScreen extends JPanels {
 
     //Constructor for 'Custom JFrames class'
-    SplashScreen() {
+    public SplashScreen() {
         this.setVisible(true);
 
         getBGM().loopContinuously();

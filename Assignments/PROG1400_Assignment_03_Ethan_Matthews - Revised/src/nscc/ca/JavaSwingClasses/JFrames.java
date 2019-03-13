@@ -9,6 +9,9 @@ import nscc.ca.EnemyClasses.Skeleton;
 import nscc.ca.EquipmentClasses.Bow;
 import nscc.ca.EquipmentClasses.Staff;
 import nscc.ca.EquipmentClasses.Sword;
+import nscc.ca.MainPanelCLasses.BattleOutput;
+import nscc.ca.MainPanelCLasses.CharacterSelect;
+import nscc.ca.MainPanelCLasses.SplashScreen;
 import nscc.ca.SoundClass.Sound;
 
 import javax.swing.*;
@@ -82,7 +85,7 @@ public class JFrames extends JFrame {
         //Sets card layout.
         setLayout(new CardLayout(0, 0));
 
-        SplashScreen splashScreenP1 = new SplashScreen();
+        nscc.ca.MainPanelCLasses.SplashScreen splashScreenP1 = new SplashScreen();
         characterSelectP2 = new CharacterSelect();
         battleScreenP3 = new BattleOutput();
         add(splashScreenP1);
@@ -97,54 +100,54 @@ public class JFrames extends JFrame {
     }
 
     //Method generates random number between 1 and 20.
-    static int randomGenerator() {
+    public static int randomGenerator() {
         return (int)(Math.random()* 20 + 1);
     }
 
-    static CharacterSelect getCharacterSelectP2() { return characterSelectP2; }
+    public static CharacterSelect getCharacterSelectP2() { return characterSelectP2; }
 
-    static BattleOutput getBattleScreenP3() { return battleScreenP3; }
+    public static BattleOutput getBattleScreenP3() { return battleScreenP3; }
 
-    static Sound getEffectDice() { return effectDice; }
+    public static Sound getEffectDice() { return effectDice; }
 
-    static Sound getRestartEffect() { return restartEffect; }
+    public static Sound getRestartEffect() { return restartEffect; }
 
-    static Sound getNextEffect() { return nextEffect; }
+    public static Sound getNextEffect() { return nextEffect; }
 
-    static Sound getEffectGate() { return effectGate; }
+    public static Sound getEffectGate() { return effectGate; }
 
-    static Sound getEffectEquip1() { return effectEquip1; }
+    public static Sound getEffectEquip1() { return effectEquip1; }
 
-    static Sound getEffectEquip2() { return effectEquip2; }
+    public static Sound getEffectEquip2() { return effectEquip2; }
 
-    static Sound getEffectEquip3() { return effectEquip3; }
+    public static Sound getEffectEquip3() { return effectEquip3; }
 
-    static Sound getEffectBow() { return effectBow; }
+    public static Sound getEffectBow() { return effectBow; }
 
-    static Sound getEffectSwords() { return effectSwords; }
+    public static Sound getEffectSwords() { return effectSwords; }
 
-    static Sound getEffectThunder() { return effectThunder; }
+    public static Sound getEffectThunder() { return effectThunder; }
 
-    static Sound getBattleBGM() { return battleBGM; }
+    public static Sound getBattleBGM() { return battleBGM; }
 
-    static Sound getBGM() { return BGM; }
+    public static Sound getBGM() { return BGM; }
 
-    static Mage getAMage() { return aMage; }
+    public static Mage getAMage() { return aMage; }
 
-    static Paladin getAPaladin() { return aPaladin; }
+    public static Paladin getAPaladin() { return aPaladin; }
 
-    static Ranger getARanger() { return aRanger; }
+    public static Ranger getARanger() { return aRanger; }
 
-    static Sword getASword() { return aSword; }
+    public static Sword getASword() { return aSword; }
 
-    static Staff getAStaff() { return aStaff; }
+    public static Staff getAStaff() { return aStaff; }
 
-    static Bow getABow() { return aBow; }
+    public static Bow getABow() { return aBow; }
 
-    static Dragon getADragon() { return aDragon; }
+    public static Dragon getADragon() { return aDragon; }
 
-    static Skeleton getASkeleton() { return aSkeleton; }
+    public static Skeleton getASkeleton() { return aSkeleton; }
 
-    static Orc getAOrc() { return aOrc; }
+    public static Orc getAOrc() { return aOrc; }
 
 }
