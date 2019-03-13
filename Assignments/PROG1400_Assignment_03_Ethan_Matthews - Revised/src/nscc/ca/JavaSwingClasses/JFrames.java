@@ -57,9 +57,9 @@ public class JFrames extends JFrame {
         BGM = new Sound("src/Audio/Theme1.wav");
 
         //Creates Default Character Classes.
-        aMage = new Mage(null, null, 0, 0, 0, 0, randomGenerator());
-        aPaladin = new Paladin(null, null, 0, 0, 0, 0, randomGenerator());
-        aRanger = new Ranger(null, null, 0, 0, 0, 0, randomGenerator());
+        aMage = new Mage(null, null, 0, 0, 0, 0, 0, randomGenerator());
+        aPaladin = new Paladin(null, null, 0, 0, 0, 0,0, randomGenerator());
+        aRanger = new Ranger(null, null, 0, 0, 0, 0,0, randomGenerator());
 
         //Creates new weapon objects that aggregate to character classes.
         aSword = new Sword(randomGenerator(), randomGenerator(), randomGenerator());
@@ -67,9 +67,9 @@ public class JFrames extends JFrame {
         aBow = new Bow(randomGenerator(), randomGenerator(), randomGenerator());
 
         //Creates monsters, one of each type.
-        aDragon = new Dragon("Dragon", randomGenerator(), randomGenerator(), randomGenerator(), randomGenerator(), "Fire");
-        aSkeleton= new Skeleton("Skeleton", randomGenerator(), randomGenerator(), randomGenerator(), randomGenerator(), randomGenerator());
-        aOrc= new Orc("Orc", randomGenerator(), randomGenerator(), randomGenerator(), randomGenerator(), randomGenerator());
+        aDragon = new Dragon("Dragon", randomGenerator(), randomGenerator(), randomGenerator(), randomGenerator(), randomGenerator(), "Fire");
+        aSkeleton= new Skeleton("Skeleton", randomGenerator(), randomGenerator(), randomGenerator(), randomGenerator(), randomGenerator(), randomGenerator());
+        aOrc= new Orc("Orc", randomGenerator(), randomGenerator(), randomGenerator(), randomGenerator(), randomGenerator(), randomGenerator());
 
         setDefaultCloseOperation(JFrames.EXIT_ON_CLOSE);
         //Title for Program Windows.

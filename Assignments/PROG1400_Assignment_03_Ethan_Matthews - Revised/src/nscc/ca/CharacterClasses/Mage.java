@@ -11,8 +11,8 @@ public class Mage extends Player {
     private String classDescription;
 
     //Constructor.
-    public Mage(String playerName, Equipment equippedWeapon, int strength, int intelligence, int dexterity, int vitality, int spellPower) {
-        super(playerName, equippedWeapon, strength, intelligence, dexterity, vitality);
+    public Mage(String playerName, Equipment equippedWeapon, int strength, int vitality, int intelligence, int dexterity, int agility, int spellPower) {
+        super(playerName, equippedWeapon, strength, intelligence, dexterity, vitality, agility);
         this.spellPower = spellPower;
         this.mageImage = new ImageIcon(this.getClass().getResource("/Images/Mage.png"));
         this.classDescription = " THE MAGE\n A MASTER OF THE ELEMENTS AND ARCANE ARTS. HIGH\n INTELLIGENCE AND DEXTERITY, LOW VITALITY AND STRENGTH.";
@@ -38,8 +38,10 @@ public class Mage extends Player {
         return
         String.format(" Player: %1$-20s", getPlayerName()) + "\n" +
         " ----------------------------------------------------------------------------------------" + "\n" +
-        String.format("%1$-20s", " Stats: ") + String.format("%1$-20s", " Strength: " + getStrength()) + String.format("%1$-20s", "Vitality: " +
-        getVitality()) + String.format("%1$-20s", "Intelligence: " + getIntelligence()) + String.format("%1$-20s","Dexterity: " + getDexterity()) +
-        "\n" + getEquippedWeapon();
+        String.format("%1$-20s", " Stats: ") + String.format("%1$-20s", " Strength: " + getStrength())
+        + String.format("%1$-20s", "Vitality: " + getVitality())
+        + String.format("%1$-20s", "Intelligence: " + getIntelligence())
+        + String.format("%1$-20s","Dexterity: " + getDexterity()) +
+        String.format("%1$-20s","Agility: " + getAgility()) +"\n" + getEquippedWeapon();
     }
 }

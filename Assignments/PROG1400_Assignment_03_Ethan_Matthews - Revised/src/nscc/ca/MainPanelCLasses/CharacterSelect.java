@@ -19,6 +19,7 @@ public class CharacterSelect extends JPanels {
     private static JTextFields vitalityTfP2;
     private static JTextFields intelligenceTfP2;
     private static JTextFields dexterityTfP2;
+    private static JTextFields agilityTfP2;
     private static JTextFields wAttackTfP2;
     private static JTextFields wWeightTfP2;
     private static JTextFields wSpecialTfP2;
@@ -31,6 +32,8 @@ public class CharacterSelect extends JPanels {
     private static JTextFields mAttackTfP2;
     private static JTextFields mDefenceTfP2;
     private static JTextFields weightTfP2;
+    private static JTextFields dodgeTfP2;
+    private static JTextFields criticalTfP2;
 
     private static JButton statGenBnP2;
 
@@ -66,62 +69,71 @@ public class CharacterSelect extends JPanels {
         JLabels CharTypeLbP2 = new JLabels(15, 175, 250, 50, "CHARACTER CLASS", 24);
         add(CharTypeLbP2);
         //JLabel for Character stats.
-        JLabels charStatsLbP2 = new JLabels(800, 175, 280, 50, "CHARACTER STATS", 24);
+        JLabels charStatsLbP2 = new JLabels(820, 175, 280, 50, "CHARACTER STATS", 24);
         add(charStatsLbP2);
         //JLabel for weapon types.
         JLabels weaponLbP2 = new JLabels(15, 640, 250, 50, "WEAPON TYPE", 24);
         add(weaponLbP2);
         //JLabel for weapon stats.
-        JLabels weaponStatsLbP2 = new JLabels(600, 640, 250, 50, "WEAPON STATS", 24);
+        JLabels weaponStatsLbP2 = new JLabels(620, 640, 250, 50, "WEAPON STATS", 24);
         add(weaponStatsLbP2);
         //JLabel for Str.
-        JLabels strengthLbP2 = new JLabels(600, 255, 150, 30, "Strength", 20);
+        JLabels strengthLbP2 = new JLabels(620, 255, 150, 30, "Strength", 20);
         add(strengthLbP2);
         //JLabel for vit.
-        JLabels vitalityLbP2 = new JLabels(600, 305, 280, 30, "Vitality", 20);
+        JLabels vitalityLbP2 = new JLabels(620, 305, 280, 30, "Vitality", 20);
         add(vitalityLbP2);
         //JLabel for int.
-        JLabels intelligenceLbP2 = new JLabels(600, 355, 280, 30, "Intelligence", 20);
+        JLabels intelligenceLbP2 = new JLabels(620, 355, 280, 30, "Intelligence", 20);
         add(intelligenceLbP2);
         //JLabel for dex.
-        JLabels dexterityLbP2 = new JLabels(600, 405, 280, 30, "Dexterity", 20);
+        JLabels dexterityLbP2 = new JLabels(620, 405, 280, 30, "Dexterity", 20);
         add(dexterityLbP2);
+        //JLabel for agi.
+        JLabels agilityLbP2 = new JLabels(620, 455, 280, 30, "Agility", 20);
+        add(agilityLbP2);
 //--------------------------------
-        JLabels attackLbP2 = new JLabels(940, 255, 150, 30, "Attack", 20);
+        JLabels attackLbP2 = new JLabels(960, 255, 150, 30, "Attack", 20);
         add(attackLbP2);
 
-        JLabels defenceLbP2 = new JLabels(940, 305, 150, 30, "Defence", 20);
+        JLabels defenceLbP2 = new JLabels(960, 305, 150, 30, "Defence", 20);
         add(defenceLbP2);
 
-        JLabels hitPointsLbP2 = new JLabels(940, 355, 150, 30, "Hit Points", 20);
+        JLabels hitPointsLbP2 = new JLabels(960, 355, 150, 30, "Hit Points", 20);
         add(hitPointsLbP2);
 
-        JLabels magicPointsLbP2 = new JLabels(940, 405, 150, 30, "Magic Points", 20);
+        JLabels magicPointsLbP2 = new JLabels(960, 405, 150, 30, "Magic Points", 20);
         add(magicPointsLbP2);
 
-        JLabels attackRangeLbP2 = new JLabels(940, 455, 180, 30, "Attack Range", 20);
+        JLabels attackRangeLbP2 = new JLabels(960, 455, 180, 30, "Attack Range", 20);
         add(attackRangeLbP2);
 
-        JLabels hitLbP2 = new JLabels(940, 505, 180, 30, "Hit", 20);
+        JLabels hitLbP2 = new JLabels(960, 505, 180, 30, "Hit", 20);
         add(hitLbP2);
 
-        JLabels mAttackLbP2 = new JLabels(940, 555, 180, 30, "Magic Attack", 20);
+        JLabels mAttackLbP2 = new JLabels(960, 555, 180, 30, "Magic Attack", 20);
         add(mAttackLbP2);
 
-        JLabels mDefenceLbP2 = new JLabels(940, 605, 180, 30, "Magic Defence", 20);
+        JLabels mDefenceLbP2 = new JLabels(960, 605, 180, 30, "Magic Defence", 20);
         add(mDefenceLbP2);
 
-        JLabels weightLbP2 = new JLabels(940, 655, 180, 30, "Weight Limit", 20);
+        JLabels weightLbP2 = new JLabels(960, 655, 180, 30, "Weight Limit", 20);
         add(weightLbP2);
 
+        JLabels dodgeLbP2 = new JLabels(960, 705, 180, 30, "Dodge", 20);
+        add(dodgeLbP2);
+
+        JLabels criticalLbP2 = new JLabels(960, 755, 180, 30, "Critical", 20);
+        add(criticalLbP2);
+
         //JLabel for weapon attack.
-        JLabels wAttackLbP2 = new JLabels(600, 690, 280, 30, "Attack", 20);
+        JLabels wAttackLbP2 = new JLabels(620, 690, 280, 30, "Attack", 20);
         add(wAttackLbP2);
         //JLabel for weapon weight.
-        JLabels wWeightLbP2 = new JLabels(600, 740, 280, 30, "Weight", 20);
+        JLabels wWeightLbP2 = new JLabels(620, 740, 280, 30, "Weight", 20);
         add(wWeightLbP2);
         //JLabel for weapon special.
-        wSpecialLbP2 = new JLabels(600, 790, 280, 30, "Special", 20);
+        wSpecialLbP2 = new JLabels(620, 790, 280, 30, "Special", 20);
         add(wSpecialLbP2);
         //JLabel for class pictures.
         picClassLbP2 = new JLabels(275, 225, 302, 280, null, 0);
@@ -137,66 +149,75 @@ public class CharacterSelect extends JPanels {
         } catch (Exception ex) { ex.printStackTrace();}
     
         //JText Field for Player name.
-        playerNameTfP2 = new JTextFields(215, 110, 180, 40, null, 24);
+        playerNameTfP2 = new JTextFields(215, 110, 280, 40, null, 24);
         //Sets so user can enter name.
         playerNameTfP2.setEditable(true);
         //Doesn't start highlighted.
         playerNameTfP2.setHighlighter(null);
         add(playerNameTfP2);
         //JText Field for str.
-        strengthTfP2 = new JTextFields(850, 255, 35, 30, null, 16);
+        strengthTfP2 = new JTextFields(870, 255, 35, 30, null, 16);
         add(strengthTfP2);
         //JText Field for vit.
-        vitalityTfP2 = new JTextFields(850, 305, 35, 30, null, 16);
+        vitalityTfP2 = new JTextFields(870, 305, 35, 30, null, 16);
         add(vitalityTfP2);
         //JText Field for int.
-        intelligenceTfP2 = new JTextFields(850, 355, 35, 30, null, 16);
+        intelligenceTfP2 = new JTextFields(870, 355, 35, 30, null, 16);
         add(intelligenceTfP2);
         //JText Field for dex.
-        dexterityTfP2 = new JTextFields(850, 405, 35, 30, null, 16);
+        dexterityTfP2 = new JTextFields(870, 405, 35, 30, null, 16);
         add(dexterityTfP2);
+
+        agilityTfP2 = new JTextFields(870, 455, 35, 30, null, 16);
+        add(agilityTfP2);
         //JText Field for weapon attack.
-        wAttackTfP2 = new JTextFields(850, 690, 35, 30, null, 16);
+        wAttackTfP2 = new JTextFields(870, 690, 35, 30, null, 16);
         add(wAttackTfP2);
         //JText Field for weapon weight.
-        wWeightTfP2 = new JTextFields(850, 740, 35, 30, null, 16);
+        wWeightTfP2 = new JTextFields(870, 740, 35, 30, null, 16);
         add(wWeightTfP2);
         //JText Field for weapon special.
-        wSpecialTfP2 = new JTextFields(850, 790, 35, 30, null, 16);
+        wSpecialTfP2 = new JTextFields(870, 790, 35, 30, null, 16);
         add(wSpecialTfP2);
 //----------------------
-        attackTfP2 = new JTextFields(1190, 255, 35, 30, null, 16);
+        attackTfP2 = new JTextFields(1210, 255, 35, 30, null, 16);
         add(attackTfP2);
 
-        defenceTfP2 = new JTextFields(1190, 305, 35, 30, null, 16);
+        defenceTfP2 = new JTextFields(1210, 305, 35, 30, null, 16);
         add(defenceTfP2);
 
-        hitPointsTfP2 = new JTextFields(1190, 355, 35, 30, null, 16);
+        hitPointsTfP2 = new JTextFields(1210, 355, 35, 30, null, 16);
         add(hitPointsTfP2);
 
-        magicPointsTfP2 = new JTextFields(1190, 405, 35, 30, null, 16);
+        magicPointsTfP2 = new JTextFields(1210, 405, 35, 30, null, 16);
         add(magicPointsTfP2);
 
-        attackRangeTfP2 = new JTextFields(1190, 455, 35, 30, null, 16);
+        attackRangeTfP2 = new JTextFields(1210, 455, 35, 30, null, 16);
         add(attackRangeTfP2);
 
-        hitTfP2 = new JTextFields(1190, 505, 35, 30, null, 16);
+        hitTfP2 = new JTextFields(1210, 505, 35, 30, null, 16);
         add(hitTfP2);
 
-        mAttackTfP2 = new JTextFields(1190, 555, 35, 30, null, 16);
+        mAttackTfP2 = new JTextFields(1210, 555, 35, 30, null, 16);
         add(mAttackTfP2);
 
-        mDefenceTfP2 = new JTextFields(1190, 605, 35, 30, null, 16);
+        mDefenceTfP2 = new JTextFields(1210, 605, 35, 30, null, 16);
         add(mDefenceTfP2);
 
-        weightTfP2 = new JTextFields(1190, 655, 35, 30, null, 16);
+        weightTfP2 = new JTextFields(1210, 655, 35, 30, null, 16);
         add(weightTfP2);
+
+        dodgeTfP2 = new JTextFields(1210, 705, 35, 30, null, 16);
+        add(dodgeTfP2);
+
+        criticalTfP2 = new JTextFields(1210, 755, 35, 30, null, 16);
+        add(criticalTfP2);
     
         //JButton for stat generation.
-        statGenBnP2 = new JButtons(720, 475, 125, 40, "ROLL", 24);
+        statGenBnP2 = new JButtons(700, 525, 125, 40, "ROLL", 24);
         add(statGenBnP2);
         //JButton for continuing to battle panel
-        JButtons battleBnP2 = new JButtons(660, 860, 250, 40,"START BATTLE",24);
+        JButtons battleBnP2 = new JButtons(960, 810, 250, 40,"START BATTLE",24);
         add(battleBnP2);
     
         //JText Area for class description.
@@ -243,6 +264,20 @@ public class CharacterSelect extends JPanels {
                 vitalityTfP2.setText(Integer.toString(randomGenerator()));
                 intelligenceTfP2.setText(Integer.toString(randomGenerator()));
                 dexterityTfP2.setText(Integer.toString(randomGenerator()));
+                agilityTfP2.setText(Integer.toString(randomGenerator()));
+                //Sets soft stats from random hard stats above.
+                //TODO: Carry in object later. Set hard coded values to variables.
+                attackTfP2.setText(Integer.toString(Integer.parseInt(strengthTfP2.getText()) * 3));
+                defenceTfP2.setText(Integer.toString(Integer.parseInt(vitalityTfP2.getText()) / 2));
+                hitPointsTfP2.setText(Integer.toString(Integer.parseInt(vitalityTfP2.getText()) * 5));
+                magicPointsTfP2.setText(Integer.toString(Integer.parseInt(intelligenceTfP2.getText()) * 5));
+                attackRangeTfP2.setText(Integer.toString(Integer.parseInt(dexterityTfP2.getText()) / 2));
+                hitTfP2.setText(Integer.toString(Integer.parseInt(dexterityTfP2.getText()) * 2));
+                mAttackTfP2.setText(Integer.toString(Integer.parseInt(intelligenceTfP2.getText()) * 3));
+                mDefenceTfP2.setText(Integer.toString(Integer.parseInt(intelligenceTfP2.getText()) / 2));
+                weightTfP2.setText(Integer.toString(Integer.parseInt(strengthTfP2.getText()) * 4));
+                dodgeTfP2.setText(Integer.toString(Integer.parseInt(agilityTfP2.getText()) * 2));
+                criticalTfP2.setText(Integer.toString(Integer.parseInt(agilityTfP2.getText()) / 4));
                 //Sets text to re-roll once activated.
                 statGenBnP2.setText("RE-ROLL");
             }
@@ -266,6 +301,7 @@ public class CharacterSelect extends JPanels {
                         getAMage().setVitality(Integer.parseInt(vitalityTfP2.getText()));
                         getAMage().setIntelligence(Integer.parseInt(intelligenceTfP2.getText()));
                         getAMage().setDexterity(Integer.parseInt(dexterityTfP2.getText()));
+                        getAMage().setAgility(Integer.parseInt(agilityTfP2.getText()));
                         //Sets mage with currently selected weapon.
                         if (radioSword.isSelected())
                             getAMage().setEquippedWeapon(getASword());
@@ -288,6 +324,7 @@ public class CharacterSelect extends JPanels {
                         getAPaladin().setVitality(Integer.parseInt(vitalityTfP2.getText()));
                         getAPaladin().setIntelligence(Integer.parseInt(intelligenceTfP2.getText()));
                         getAPaladin().setDexterity(Integer.parseInt(dexterityTfP2.getText()));
+                        getAPaladin().setAgility(Integer.parseInt(agilityTfP2.getText()));
                         //Sets Paladin with currently selected weapon.
                         if (radioSword.isSelected())
                             getAPaladin().setEquippedWeapon(getASword());
@@ -310,6 +347,7 @@ public class CharacterSelect extends JPanels {
                         getARanger().setVitality(Integer.parseInt(vitalityTfP2.getText()));
                         getARanger().setIntelligence(Integer.parseInt(intelligenceTfP2.getText()));
                         getARanger().setDexterity(Integer.parseInt(dexterityTfP2.getText()));
+                        getARanger().setAgility(Integer.parseInt(agilityTfP2.getText()));
                         //Sets Ranger with currently selected weapon.
                         if (radioSword.isSelected())
                             getAPaladin().setEquippedWeapon(getASword());
@@ -388,7 +426,7 @@ public class CharacterSelect extends JPanels {
                 //Changes Description in weapon Text area.
                 getWeaponDescription().setText(getASword().getWeaponDescription());
                 //Gets weapon labels and text fields.
-                getWSpecialTfP2().setText("Attack Modifier");
+                getWSpecialLbP2().setText("Attack Modifier");
                 getWAttackTfP2().setText("" + getASword().getAttack());
                 getWWeightTfP2().setText("" + getASword().getWeight());
                 getWSpecialTfP2().setText("" + getASword().getAttackModifier());
@@ -421,8 +459,8 @@ public class CharacterSelect extends JPanels {
                 getPicWeaponLbP2().setIcon(getABow().getBowImage());
                 //Changes Description in weapon Text area.
                 getWeaponDescription().setText(getABow().getWeaponDescription());
-                getWSpecialLbP2().setText("Range Modifier");
                 //Sets weapon labels and text fields.
+                getWSpecialLbP2().setText("Range Modifier");
                 getWAttackTfP2().setText("" + getABow().getAttack());
                 getWWeightTfP2().setText("" + getABow().getWeight());
                 getWSpecialTfP2().setText("" + getABow().getRangeModifier());
@@ -494,6 +532,8 @@ public class CharacterSelect extends JPanels {
     static JTextFields getIntelligenceTfP2() { return intelligenceTfP2; }
 
     static JTextFields getDexterityTfP2() { return dexterityTfP2; }
+
+    static JTextFields getAgilityTfP2() { return agilityTfP2; }
 
     static JTextFields getWAttackTfP2() { return wAttackTfP2; }
 

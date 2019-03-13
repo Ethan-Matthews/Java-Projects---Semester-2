@@ -8,8 +8,8 @@ public abstract class Player extends Character{
     private String playerName;
     private Equipment equippedWeapon;
     //Constructor.
-    public Player(String playerName, Equipment equippedWeapon, int strength, int intelligence, int dexterity, int vitality) {
-        super(strength, intelligence, dexterity, vitality);
+    public Player(String playerName, Equipment equippedWeapon, int strength, int intelligence, int dexterity, int vitality, int agility) {
+        super(strength, intelligence, dexterity, vitality, agility);
         this.playerName = playerName;
         this.equippedWeapon = equippedWeapon;
     }

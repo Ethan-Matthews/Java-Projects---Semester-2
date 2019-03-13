@@ -7,8 +7,8 @@ public abstract class Monster extends Character {
 
     private String monsterName;
     //Constructor.
-    public Monster(String monsterName, int strength, int intelligence, int dexterity, int vitality) {
-        super(strength, intelligence, dexterity, vitality);
+    public Monster(String monsterName, int strength, int vitality, int intelligence, int dexterity, int agility) {
+        super(strength, intelligence, dexterity, vitality, agility);
         this.monsterName = monsterName;
     }
     //Getters.

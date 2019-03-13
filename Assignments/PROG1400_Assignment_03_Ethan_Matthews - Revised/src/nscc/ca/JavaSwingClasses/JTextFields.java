@@ -15,6 +15,8 @@ public class JTextFields extends JTextField {
         this.setText(text);
         //Sets Font to to custom font, and Size.
         this.setFont(new Font("Detente", Font.PLAIN, fontSize));
+        //Sets Text to Center position of field.
+        this.setHorizontalAlignment(CENTER);
         //Sets background colour for Text Fields.
         this.setBackground(Color.GRAY);
         //Sets Text/border colour.
