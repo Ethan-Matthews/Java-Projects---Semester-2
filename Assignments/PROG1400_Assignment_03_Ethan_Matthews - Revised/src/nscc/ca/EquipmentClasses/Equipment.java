@@ -9,7 +9,7 @@ public abstract class Equipment {
     public Equipment(int weight, int attack) {
         this.weight = weight;
         this.attack = attack;
-    }
+    } 
 
     public int getWeight() {
         return weight;
