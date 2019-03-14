@@ -219,7 +219,7 @@ public class CharacterSelect extends JPanels {
         statGenBnP2 = new JButtons(700, 525, 125, 40, "ROLL", 24);
         add(statGenBnP2);
         //JButton for continuing to battle panel
-        JButtons battleBnP2 = new JButtons(620, 855, 620, 40,"START BATTLE",24);
+        JButtons battleBnP2 = new JButtons(620, 855, 635, 80,"START BATTLE",24);
         add(battleBnP2);
     
         //JText Area for class description.
@@ -340,7 +340,7 @@ public class CharacterSelect extends JPanels {
                     }
                     if (radioRanger.isSelected()) {
                         //Sets image to Ranger on battle screen.
-                        getPicClassLbP3().setIcon(getAPaladin().getPaladinImage());
+                        getPicClassLbP3().setIcon(getARanger().getRangerImage());
                         //Sets player class title if Ranger is selected.
                         getClassChoiceLbP3().setText("Player: Ranger");
                         //Sets Ranger name and stats.
@@ -352,11 +352,11 @@ public class CharacterSelect extends JPanels {
                         getARanger().setAgility(Integer.parseInt(agilityTfP2.getText()));
                         //Sets Ranger with currently selected weapon.
                         if (radioSword.isSelected())
-                            getAPaladin().setEquippedWeapon(getASword());
+                            getARanger().setEquippedWeapon(getASword());
                         else if (radioStaff.isSelected())
-                            getAPaladin().setEquippedWeapon(getAStaff());
+                            getARanger().setEquippedWeapon(getAStaff());
                         else if (radioBow.isSelected())
-                            getAPaladin().setEquippedWeapon(getABow());
+                            getARanger().setEquippedWeapon(getABow());
                         getTextOutTaP3().setText(getARanger().toString());
                         getTextOutTa2P3().setText(getARanger().toString());
                         getTextOutTa3P3().setText(getARanger().toString());

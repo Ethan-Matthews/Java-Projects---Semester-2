@@ -35,7 +35,7 @@ public class Orc extends Monster {
         + String.format("%1$-20s", "Intelligence: " + getIntelligence())
         + String.format("%1$-20s","Dexterity: " + getDexterity()) + "\n"
         + String.format("%1$-20s","Agility: " + getAgility())
-        + String.format("%1$-19s"," Special: ") + String.format("%1$-19s", "Strength Bonus: " + getStrengthBonus());
+        + String.format("%1$-19s", "Strength Bonus: " + getStrengthBonus());
     }
 
 }

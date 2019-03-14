@@ -42,6 +42,6 @@ public class Mage extends Player {
         + String.format("%1$-20s", "Vitality: " + getVitality())
         + String.format("%1$-20s", "Intelligence: " + getIntelligence())
         + String.format("%1$-20s","Dexterity: " + getDexterity()) +
-        String.format("%1$-20s","Agility: " + getAgility()) +"\n" + getEquippedWeapon();
+        String.format("%1$-20s","Agility: " + getAgility()) + "\n" + getEquippedWeapon();
     }
 }

@@ -43,7 +43,7 @@ public class Paladin extends Player {
             String.format("%1$-20s", " Stats: ") + String.format("%1$-20s", " Strength: " + getStrength())
             + String.format("%1$-20s", "Vitality: " + getVitality())
             + String.format("%1$-20s", "Intelligence: " + getIntelligence())
-            + String.format("%1$-20s","Dexterity: " + getDexterity()) + "\n"
-            + String.format("%1$-20s","Agility: " + getAgility()) + getEquippedWeapon();
+            + String.format("%1$-20s","Dexterity: " + getDexterity())
+            + String.format("%1$-20s","Agility: " + getAgility()) + "\n" + getEquippedWeapon();
     }
 }

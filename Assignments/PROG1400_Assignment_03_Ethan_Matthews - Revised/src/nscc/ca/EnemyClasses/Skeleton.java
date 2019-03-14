@@ -34,8 +34,8 @@ public class Skeleton extends Monster {
         + String.format("%1$-20s", "Vitality: " + getVitality())
         + String.format("%1$-20s", "Intelligence: " + getIntelligence())
         + String.format("%1$-20s","Dexterity: " + getDexterity()) + "\n"
-        + String.format("%1$-20s","Agility: " + getAgility()) + "\n"
-        + String.format("%1$-19s"," Special: ") + String.format("%1$-19s", "Resurrection Charge: " +  getResurrectionCharge());
+        + String.format("%1$-20s","Agility: " + getAgility())
+        + String.format("%1$-19s", "Resurrection Charge: " +  getResurrectionCharge());
     }
 
 

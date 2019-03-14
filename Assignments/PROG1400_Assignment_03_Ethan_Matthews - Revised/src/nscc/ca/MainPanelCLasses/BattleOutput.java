@@ -28,52 +28,52 @@ public class BattleOutput extends JPanels {
         //Set Panel layout.
         setLayout(null);
         //JLabel for main title.
-        JLabels titleLbP3 = new JLabels(15, 10, 960, 70, "BATTLE ONE", 48);
+        JLabels titleLbP3 = new JLabels(0, 10, 1300, 70, "BATTLE ONE", 48);
         titleLbP3.setHorizontalAlignment(JLabel.CENTER);
         add(titleLbP3);
         //JLabel for main title underline.
-        JLabels titleULbP3 = new JLabels(15, 80, 960, 1, null, 0);
+        JLabels titleULbP3 = new JLabels(15, 80, 1265, 1, null, 0);
         titleULbP3.setBackground(Color.WHITE);
         Border borderP3 = BorderFactory.createLineBorder(Color.WHITE, 10);
         titleULbP3.setBorder(borderP3);
         add(titleULbP3);
         //JLabel for class chosen by user.
-        classChoiceLbP3 = new JLabels(0, 150, 500, 40, null, 24);
+        classChoiceLbP3 = new JLabels(0, 120, 500, 40, null, 24);
         classChoiceLbP3.setHorizontalAlignment(JLabel.CENTER);
         add(classChoiceLbP3);
         //JLabel for monster class.
-        monsterTypeLbP3 = new JLabels(500, 150, 500, 40, null, 24);
+        monsterTypeLbP3 = new JLabels(830, 120, 500, 40, null, 24);
         monsterTypeLbP3.setHorizontalAlignment(JLabel.CENTER);
         add(monsterTypeLbP3);
         //VS JLabel.
-        JLabels vs = new JLabels(450, 315, 100, 80, "VS", 72);
+        JLabels vs = new JLabels(600, 315, 100, 80, "VS", 72);
         add(vs);
         //JLabel for char class pic.
         picClassLbP3 = new JLabels(65,200, 302,280, null, 0);
         add(picClassLbP3);
         //JLabel for monster pic.
-        picEnemyLbP3 = new JLabels(633,200, 302,280, null, 0);
+        picEnemyLbP3 = new JLabels(933,200, 302,280, null, 0);
         add(picEnemyLbP3);
         //Text area for first output.
-        textOutTaP3 = new JTextAreas(15, 500, 963, 405, null, 18);
+        textOutTaP3 = new JTextAreas(15, 500, 1265, 405, null, 18);
         add(textOutTaP3);
         //Text area for second output.
-        textOutTa2P3 = new JTextAreas(15, 500, 963, 405, null, 18);
+        textOutTa2P3 = new JTextAreas(15, 500, 1265, 405, null, 18);
         textOutTa2P3.setVisible(false);
         add(textOutTa2P3);
         //Text area for third output.
-        textOutTa3P3 = new JTextAreas(15, 500, 963, 405, null, 18);
+        textOutTa3P3 = new JTextAreas(15, 500, 1265, 405, null, 18);
         textOutTa3P3.setVisible(false);
         add(textOutTa3P3);
         //JButton for battle panel 1 to battle panel 2.
-        nextBnP3 = new JButtons(440, 920, 120, 40, "NEXT", 24);
+        nextBnP3 = new JButtons(590, 920, 120, 40, "NEXT", 24);
         add(nextBnP3);
         //JButton for battle panel 2 to battle panel 3.
-        nextBn2P3 = new JButtons(440, 920, 120, 40, "NEXT", 24);
+        nextBn2P3 = new JButtons(590, 920, 120, 40, "NEXT", 24);
         nextBn2P3.setVisible(false);
         add(nextBn2P3);
         //JButton for resetting char generator.
-        restartBnP3 = new JButtons(370, 920, 260, 40, "Roll Again?", 24);
+        restartBnP3 = new JButtons(520, 920, 260, 40, "Roll Again?", 24);
         restartBnP3.setVisible(false);
         add(restartBnP3);
 
