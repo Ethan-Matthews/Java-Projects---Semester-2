@@ -2,7 +2,7 @@ package nscc.ca.MainPanelCLasses;
 
 import nscc.ca.JavaSwingClasses.*;
 import javax.swing.*;
-import java.awt.event.*;
+
 import static nscc.ca.JavaSwingClasses.JFrames.*;
 
 //Custom JFrames class extends JFrame.
@@ -30,13 +30,10 @@ public class SplashScreen extends JPanels {
         add(createBnP1);
 
         //Splash screen Create button action listener.
-        createBnP1.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                getEffectGate().playOnce();
-                setVisible(false);
-                getCharacterSelectP2().setVisible(true);
-            }
+        createBnP1.addActionListener(e -> {
+            getEffectGate().playOnce();
+            setVisible(false);
+            getCharacterSelectP2().setVisible(true);
         });
     }
 }

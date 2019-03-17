@@ -22,13 +22,6 @@ public class Bow extends Equipment{
 
     public String getWeaponDescription() { return weaponDescription; }
 
-    //Setters.
-    public void setBowImage(ImageIcon bowImage) { this.bowImage = bowImage; }
-
-    public void setRangeModifier(int rangeModifier) { this.rangeModifier = rangeModifier; }
-
-    public void setWeaponDescription(String weaponDescription) { this.weaponDescription = weaponDescription; }
-
     //To String formats text for Bow output in Char screen.
     @Override
     public String toString() {

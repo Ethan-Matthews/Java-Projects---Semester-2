@@ -22,13 +22,6 @@ public class Sword extends Equipment {
 
     public String getWeaponDescription() { return weaponDescription; }
 
-    //Setters.
-    public void setSwordImage(ImageIcon swordImage) { this.swordImage = swordImage; }
-
-    public void setAttackModifier(int attackModifier) { this.attackModifier = attackModifier; }
-
-    public void setWeaponDescription(String weaponDescription) { this.weaponDescription = weaponDescription; }
-
     //To String formats text for Sword output in Char screen.
     @Override
     public String toString() {

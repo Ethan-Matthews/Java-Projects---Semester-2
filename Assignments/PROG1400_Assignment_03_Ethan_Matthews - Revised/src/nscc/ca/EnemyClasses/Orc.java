@@ -14,15 +14,11 @@ public class Orc extends Monster {
         this.orcImage = new ImageIcon(this.getClass().getResource("/Images/Orc.png"));
     }
     //Getters.
-    public int getStrengthBonus() {
+    private int getStrengthBonus() {
         return strengthBonus;
     }
 
     public ImageIcon getOrcImage() { return orcImage; }
-    //Setters.
-    public void setStrengthBonus(int strengthBonus) { this.strengthBonus = strengthBonus; }
-
-    public void setOrcImage(ImageIcon orcImage) { this.orcImage = orcImage; }
 
     //To String formats text for Orc output in battle screen.
     @Override

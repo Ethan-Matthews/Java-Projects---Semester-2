@@ -172,8 +172,8 @@ public class BattleOutput extends JPanels {
             getDefenceTfP2().setText(null);
             getHitPointsTfP2().setText(null);
             getMagicPointsTfP2().setText(null);
-            getmAttackTfP2().setText(null);
-            getmDefenceTfP2().setText(null);
+            getMAttackTfP2().setText(null);
+            getMDefenceTfP2().setText(null);
             getAttackRangeTfP2().setText(null);
             getHitTfP2().setText(null);
             getWeightTfP2().setText(null);

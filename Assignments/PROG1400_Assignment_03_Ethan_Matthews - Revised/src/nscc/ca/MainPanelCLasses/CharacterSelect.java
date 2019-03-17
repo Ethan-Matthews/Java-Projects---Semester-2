@@ -1,10 +1,19 @@
 package nscc.ca.MainPanelCLasses;
 
 import nscc.ca.JavaSwingClasses.*;
+
+import javax.imageio.ImageIO;
+import javax.imageio.stream.ImageInputStream;
 import javax.swing.*;
 import javax.swing.border.*;
 import java.awt.*;
-import java.awt.event.*;
+import java.awt.Paint.*;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
+
 import static nscc.ca.MainPanelCLasses.BattleOutput.*;
 import static nscc.ca.JavaSwingClasses.JFrames.*;
 
@@ -49,9 +58,20 @@ public class CharacterSelect extends JPanels {
     private static JRadioButtons radioSword;
     private static JRadioButtons radioStaff;
     private static JRadioButtons radioBow;
+    private BufferedImage bg;
+
+
 
     public CharacterSelect() {
         setVisible(false);
+        try {
+            bg = ImageIO.read(new File("src/Images/Book.png"));
+        } catch (Exception e) {e.printStackTrace();}
+
+
+
+
+
         //JLabel for main title of character creation.
         JLabels titleLbP2 = new JLabels(15, 10, 960, 70, "CHARACTER GENERATION", 48);
         titleLbP2.setHorizontalAlignment(JButton.LEFT);
@@ -256,219 +276,202 @@ public class CharacterSelect extends JPanels {
 
 
         //JButton for Character Stat Generation.
-        statGenBnP2.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                //Plays Dice sound.
-                getEffectDice().playOnce();
-                //Sets and converts random integers to string.
-                strengthTfP2.setText(Integer.toString(randomGenerator()));
-                vitalityTfP2.setText(Integer.toString(randomGenerator()));
-                intelligenceTfP2.setText(Integer.toString(randomGenerator()));
-                dexterityTfP2.setText(Integer.toString(randomGenerator()));
-                agilityTfP2.setText(Integer.toString(randomGenerator()));
-                //Sets soft stats from random hard stats above.
-                //TODO: Carry in object later. Set hard coded values to variables.
-                attackTfP2.setText(Integer.toString(Integer.parseInt(strengthTfP2.getText()) * 3));
-                defenceTfP2.setText(Integer.toString(Integer.parseInt(vitalityTfP2.getText()) / 2));
-                hitPointsTfP2.setText(Integer.toString(Integer.parseInt(vitalityTfP2.getText()) * 5));
-                magicPointsTfP2.setText(Integer.toString(Integer.parseInt(intelligenceTfP2.getText()) * 5));
-                attackRangeTfP2.setText(Integer.toString(Integer.parseInt(dexterityTfP2.getText()) / 2));
-                hitTfP2.setText(Integer.toString(Integer.parseInt(dexterityTfP2.getText()) * 2));
-                mAttackTfP2.setText(Integer.toString(Integer.parseInt(intelligenceTfP2.getText()) * 3));
-                mDefenceTfP2.setText(Integer.toString(Integer.parseInt(intelligenceTfP2.getText()) / 2));
-                weightTfP2.setText(Integer.toString(Integer.parseInt(strengthTfP2.getText()) * 4));
-                dodgeTfP2.setText(Integer.toString(Integer.parseInt(agilityTfP2.getText()) * 2));
-                criticalTfP2.setText(Integer.toString(Integer.parseInt(agilityTfP2.getText()) / 4));
-                //Sets text to re-roll once activated.
-                statGenBnP2.setText("RE-ROLL");
-            }
+        statGenBnP2.addActionListener(e -> {
+            //Plays Dice sound.
+            getEffectDice().playOnce();
+            //Sets and converts random integers to string.
+            strengthTfP2.setText(Integer.toString(randomGenerator()));
+            vitalityTfP2.setText(Integer.toString(randomGenerator()));
+            intelligenceTfP2.setText(Integer.toString(randomGenerator()));
+            dexterityTfP2.setText(Integer.toString(randomGenerator()));
+            agilityTfP2.setText(Integer.toString(randomGenerator()));
+            //Sets soft stats from random hard stats above.
+            //TODO: Carry in object later. Set hard coded values to variables.
+            attackTfP2.setText(Integer.toString(Integer.parseInt(strengthTfP2.getText()) * 3));
+            defenceTfP2.setText(Integer.toString(Integer.parseInt(vitalityTfP2.getText()) / 2));
+            hitPointsTfP2.setText(Integer.toString(Integer.parseInt(vitalityTfP2.getText()) * 5));
+            magicPointsTfP2.setText(Integer.toString(Integer.parseInt(intelligenceTfP2.getText()) * 5));
+            attackRangeTfP2.setText(Integer.toString(Integer.parseInt(dexterityTfP2.getText()) / 2));
+            hitTfP2.setText(Integer.toString(Integer.parseInt(dexterityTfP2.getText()) * 2));
+            mAttackTfP2.setText(Integer.toString(Integer.parseInt(intelligenceTfP2.getText()) * 3));
+            mDefenceTfP2.setText(Integer.toString(Integer.parseInt(intelligenceTfP2.getText()) / 2));
+            weightTfP2.setText(Integer.toString(Integer.parseInt(strengthTfP2.getText()) * 4));
+            dodgeTfP2.setText(Integer.toString(Integer.parseInt(agilityTfP2.getText()) * 2));
+            criticalTfP2.setText(Integer.toString(Integer.parseInt(agilityTfP2.getText()) / 4));
+            //Sets text to re-roll once activated.
+            statGenBnP2.setText("RE-ROLL");
         });
 
         //Battle button action listener main panel 2 to 3.
-        battleBnP2.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                //Checks inputs of all need values.
-                if (inputCheck(playerNameTfP2.getText(), strengthTfP2.getText(), charClasses, weaponClasses)) {
-                    //If statements for character generation.
-                    if (getRadioMage().isSelected()) {
-                        //Sets image to Mage on battle screen.
-                        getPicClassLbP3().setIcon(getAMage().getMageImage());
-                        //Sets player class title if mage is selected.
-                        getClassChoiceLbP3().setText("Player: Mage");
-                        //Sets Mage name and stats.
-                        getAMage().setPlayerName(playerNameTfP2.getText());
-                        getAMage().setStrength(Integer.parseInt(strengthTfP2.getText()));
-                        getAMage().setVitality(Integer.parseInt(vitalityTfP2.getText()));
-                        getAMage().setIntelligence(Integer.parseInt(intelligenceTfP2.getText()));
-                        getAMage().setDexterity(Integer.parseInt(dexterityTfP2.getText()));
-                        getAMage().setAgility(Integer.parseInt(agilityTfP2.getText()));
-                        //Sets mage with currently selected weapon.
-                        if (radioSword.isSelected())
-                            getAMage().setEquippedWeapon(getASword());
-                        else if (radioStaff.isSelected())
-                            getAMage().setEquippedWeapon(getAStaff());
-                        else if (radioBow.isSelected())
-                            getAMage().setEquippedWeapon(getABow());
-                        getTextOutTaP3().setText(getAMage().toString());
-                        getTextOutTa2P3().setText(getAMage().toString());
-                        getTextOutTa3P3().setText(getAMage().toString());
-                    }
-                    if (radioPaladin.isSelected()) {
-                        //Sets image to Paladin on battle screen.
-                        getPicClassLbP3().setIcon(getAPaladin().getPaladinImage());
-                        //Sets player class title if Paladin is selected.
-                        getClassChoiceLbP3().setText("Player: Paladin");
-                        //Sets Paladin name and stats.
-                        getAPaladin().setPlayerName(playerNameTfP2.getText());
-                        getAPaladin().setStrength(Integer.parseInt(strengthTfP2.getText()));
-                        getAPaladin().setVitality(Integer.parseInt(vitalityTfP2.getText()));
-                        getAPaladin().setIntelligence(Integer.parseInt(intelligenceTfP2.getText()));
-                        getAPaladin().setDexterity(Integer.parseInt(dexterityTfP2.getText()));
-                        getAPaladin().setAgility(Integer.parseInt(agilityTfP2.getText()));
-                        //Sets Paladin with currently selected weapon.
-                        if (radioSword.isSelected())
-                            getAPaladin().setEquippedWeapon(getASword());
-                        else if (radioStaff.isSelected())
-                            getAPaladin().setEquippedWeapon(getAStaff());
-                        else if (radioBow.isSelected())
-                            getAPaladin().setEquippedWeapon(getABow());
-                        getTextOutTaP3().setText(getAPaladin().toString());
-                        getTextOutTa2P3().setText(getAPaladin().toString());
-                        getTextOutTa3P3().setText(getAPaladin().toString());
-                    }
-                    if (radioRanger.isSelected()) {
-                        //Sets image to Ranger on battle screen.
-                        getPicClassLbP3().setIcon(getARanger().getRangerImage());
-                        //Sets player class title if Ranger is selected.
-                        getClassChoiceLbP3().setText("Player: Ranger");
-                        //Sets Ranger name and stats.
-                        getARanger().setPlayerName(playerNameTfP2.getText());
-                        getARanger().setStrength(Integer.parseInt(strengthTfP2.getText()));
-                        getARanger().setVitality(Integer.parseInt(vitalityTfP2.getText()));
-                        getARanger().setIntelligence(Integer.parseInt(intelligenceTfP2.getText()));
-                        getARanger().setDexterity(Integer.parseInt(dexterityTfP2.getText()));
-                        getARanger().setAgility(Integer.parseInt(agilityTfP2.getText()));
-                        //Sets Ranger with currently selected weapon.
-                        if (radioSword.isSelected())
-                            getARanger().setEquippedWeapon(getASword());
-                        else if (radioStaff.isSelected())
-                            getARanger().setEquippedWeapon(getAStaff());
-                        else if (radioBow.isSelected())
-                            getARanger().setEquippedWeapon(getABow());
-                        getTextOutTaP3().setText(getARanger().toString());
-                        getTextOutTa2P3().setText(getARanger().toString());
-                        getTextOutTa3P3().setText(getARanger().toString());
-                    }
-                    //stops background music.
-                    getBGM().stopSound();
-                    getNextEffect().playOnce();
-                    //resets battle BGM to frame 0.
-                    getBattleBGM().reset();
-                    //starts battle BGM on continuous loop.
-                    getBattleBGM().loopContinuously();
-                    //Sets enemy picture.
-                    getPicEnemyLbP3().setIcon(getAOrc().getOrcImage());
-                    //Sets enemy tile.
-                    getMonsterTypeLbP3().setText("Monster: Orc");
-                    //Addends Text area output with Orc toString.
-                    getTextOutTaP3().append(getAOrc().toString());
-                    //Char screen set to invisible.
-                    setVisible(false);
-                    //Battle screen set to visible.
-                    getBattleScreenP3().setVisible(true);
+        battleBnP2.addActionListener(e -> {
+            //Checks inputs of all need values.
+            if (inputCheck(playerNameTfP2.getText(), strengthTfP2.getText(), charClasses, weaponClasses)) {
+                //If statements for character generation.
+                if (getRadioMage().isSelected()) {
+                    //Sets image to Mage on battle screen.
+                    getPicClassLbP3().setIcon(getAMage().getMageImage());
+                    //Sets player class title if mage is selected.
+                    getClassChoiceLbP3().setText("Player: Mage");
+                    //Sets Mage name and stats.
+                    getAMage().setPlayerName(playerNameTfP2.getText());
+                    getAMage().setStrength(Integer.parseInt(strengthTfP2.getText()));
+                    getAMage().setVitality(Integer.parseInt(vitalityTfP2.getText()));
+                    getAMage().setIntelligence(Integer.parseInt(intelligenceTfP2.getText()));
+                    getAMage().setDexterity(Integer.parseInt(dexterityTfP2.getText()));
+                    getAMage().setAgility(Integer.parseInt(agilityTfP2.getText()));
+                    //Sets mage with currently selected weapon.
+                    if (radioSword.isSelected())
+                        getAMage().setEquippedWeapon(getASword());
+                    else if (radioStaff.isSelected())
+                        getAMage().setEquippedWeapon(getAStaff());
+                    else if (radioBow.isSelected())
+                        getAMage().setEquippedWeapon(getABow());
+                    getTextOutTaP3().setText(getAMage().toString());
+                    getTextOutTa2P3().setText(getAMage().toString());
+                    getTextOutTa3P3().setText(getAMage().toString());
                 }
+                if (radioPaladin.isSelected()) {
+                    //Sets image to Paladin on battle screen.
+                    getPicClassLbP3().setIcon(getAPaladin().getPaladinImage());
+                    //Sets player class title if Paladin is selected.
+                    getClassChoiceLbP3().setText("Player: Paladin");
+                    //Sets Paladin name and stats.
+                    getAPaladin().setPlayerName(playerNameTfP2.getText());
+                    getAPaladin().setStrength(Integer.parseInt(strengthTfP2.getText()));
+                    getAPaladin().setVitality(Integer.parseInt(vitalityTfP2.getText()));
+                    getAPaladin().setIntelligence(Integer.parseInt(intelligenceTfP2.getText()));
+                    getAPaladin().setDexterity(Integer.parseInt(dexterityTfP2.getText()));
+                    getAPaladin().setAgility(Integer.parseInt(agilityTfP2.getText()));
+                    //Sets Paladin with currently selected weapon.
+                    if (radioSword.isSelected())
+                        getAPaladin().setEquippedWeapon(getASword());
+                    else if (radioStaff.isSelected())
+                        getAPaladin().setEquippedWeapon(getAStaff());
+                    else if (radioBow.isSelected())
+                        getAPaladin().setEquippedWeapon(getABow());
+                    getTextOutTaP3().setText(getAPaladin().toString());
+                    getTextOutTa2P3().setText(getAPaladin().toString());
+                    getTextOutTa3P3().setText(getAPaladin().toString());
+                }
+                if (radioRanger.isSelected()) {
+                    //Sets image to Ranger on battle screen.
+                    getPicClassLbP3().setIcon(getARanger().getRangerImage());
+                    //Sets player class title if Ranger is selected.
+                    getClassChoiceLbP3().setText("Player: Ranger");
+                    //Sets Ranger name and stats.
+                    getARanger().setPlayerName(playerNameTfP2.getText());
+                    getARanger().setStrength(Integer.parseInt(strengthTfP2.getText()));
+                    getARanger().setVitality(Integer.parseInt(vitalityTfP2.getText()));
+                    getARanger().setIntelligence(Integer.parseInt(intelligenceTfP2.getText()));
+                    getARanger().setDexterity(Integer.parseInt(dexterityTfP2.getText()));
+                    getARanger().setAgility(Integer.parseInt(agilityTfP2.getText()));
+                    //Sets Ranger with currently selected weapon.
+                    if (radioSword.isSelected())
+                        getARanger().setEquippedWeapon(getASword());
+                    else if (radioStaff.isSelected())
+                        getARanger().setEquippedWeapon(getAStaff());
+                    else if (radioBow.isSelected())
+                        getARanger().setEquippedWeapon(getABow());
+                    getTextOutTaP3().setText(getARanger().toString());
+                    getTextOutTa2P3().setText(getARanger().toString());
+                    getTextOutTa3P3().setText(getARanger().toString());
+                }
+                //stops background music.
+                getBGM().stopSound();
+                getNextEffect().playOnce();
+                //resets battle BGM to frame 0.
+                getBattleBGM().reset();
+                //starts battle BGM on continuous loop.
+                getBattleBGM().loopContinuously();
+                //Sets enemy picture.
+                getPicEnemyLbP3().setIcon(getAOrc().getOrcImage());
+                //Sets enemy tile.
+                getMonsterTypeLbP3().setText("Monster: Orc");
+                //Addends Text area output with Orc toString.
+                getTextOutTaP3().append(getAOrc().toString());
+                //Char screen set to invisible.
+                setVisible(false);
+                //Battle screen set to visible.
+                getBattleScreenP3().setVisible(true);
             }
         });
         //JRadioButton Mage action listener.
-        getRadioMage().addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                //Plays sound effect once.
-                getEffectThunder().playOnce();
-                //Gets Class picture.
-                getPicClassLbP2().setIcon(getAMage().getMageImage());
-                //Changes Description in Class Text area.
-                getClassDescription().setText(getAMage().getClassDescription());
-            }
+        getRadioMage().addActionListener(e -> {
+            //Plays sound effect once.
+            getEffectThunder().playOnce();
+            //Gets Class picture.
+            getPicClassLbP2().setIcon(getAMage().getMageImage());
+            //Changes Description in Class Text area.
+            getClassDescription().setText(getAMage().getClassDescription());
         });
         //JRadioButton Paladin action listener.
-        getRadioPaladin().addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                //Plays sound effect once.
-                getEffectSwords().playOnce();
-                //Gets Class picture.
-                getPicClassLbP2().setIcon(getAPaladin().getPaladinImage());
-                //Changes Description in Class Text area.
-                getClassDescription().setText(getAPaladin().getClassDescription());
-            }
+        getRadioPaladin().addActionListener(e -> {
+            //Plays sound effect once.
+            getEffectSwords().playOnce();
+            //Gets Class picture.
+            getPicClassLbP2().setIcon(getAPaladin().getPaladinImage());
+            //Changes Description in Class Text area.
+            getClassDescription().setText(getAPaladin().getClassDescription());
         });
         //JRadioButton Ranger action listener.
-        getRadioRanger().addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                //Plays sound effect once.
-                getEffectBow().playOnce();
-                //Sets Class picture.
-                getPicClassLbP2().setIcon(getARanger().getRangerImage());
-                //Changes Description in Class Text area.
-                getClassDescription().setText(getARanger().getClassDescription());
-            }
+        getRadioRanger().addActionListener(e -> {
+            //Plays sound effect once.
+            getEffectBow().playOnce();
+            //Sets Class picture.
+            getPicClassLbP2().setIcon(getARanger().getRangerImage());
+            //Changes Description in Class Text area.
+            getClassDescription().setText(getARanger().getClassDescription());
         });
         //JRadioButton Sword action listener.
-        getRadioSword().addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                //Plays sound effect once.
-                getEffectEquip1().playOnce();
-                //Gets weapon picture.
-                getPicWeaponLbP2().setIcon(getASword().getSwordImage());
-                //Changes Description in weapon Text area.
-                getWeaponDescription().setText(getASword().getWeaponDescription());
-                //Gets weapon labels and text fields.
-                getWSpecialLbP2().setText("Attack Modifier");
-                getWAttackTfP2().setText("" + getASword().getAttack());
-                getWWeightTfP2().setText("" + getASword().getWeight());
-                getWSpecialTfP2().setText("" + getASword().getAttackModifier());
-            }
+        getRadioSword().addActionListener(e -> {
+            //Plays sound effect once.
+            getEffectEquip1().playOnce();
+            //Gets weapon picture.
+            getPicWeaponLbP2().setIcon(getASword().getSwordImage());
+            //Changes Description in weapon Text area.
+            getWeaponDescription().setText(getASword().getWeaponDescription());
+            //Gets weapon labels and text fields.
+            getWSpecialLbP2().setText("Attack Modifier");
+            getWAttackTfP2().setText("" + getASword().getAttack());
+            getWWeightTfP2().setText("" + getASword().getWeight());
+            getWSpecialTfP2().setText("" + getASword().getAttackModifier());
         });
         //JRadioButton Staff action listener.
-        getRadioStaff().addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                //Plays sound effect once.
-                getEffectEquip2().playOnce();
-                //Sets weapon picture.
-                getPicWeaponLbP2().setIcon(getAStaff().getStaffImage());
-                //Changes Description in weapon Text area.
-                getWeaponDescription().setText(getAStaff().getWeaponDescription());
-                //Sets weapon labels and text fields.
-                getWSpecialLbP2().setText("SpellCharges");
-                getWAttackTfP2().setText("" + getAStaff().getAttack());
-                getWWeightTfP2().setText("" + getAStaff().getWeight());
-                getWSpecialTfP2().setText("" + getAStaff().getSpellCharge());
-            }
+        getRadioStaff().addActionListener(e -> {
+            //Plays sound effect once.
+            getEffectEquip2().playOnce();
+            //Sets weapon picture.
+            getPicWeaponLbP2().setIcon(getAStaff().getStaffImage());
+            //Changes Description in weapon Text area.
+            getWeaponDescription().setText(getAStaff().getWeaponDescription());
+            //Sets weapon labels and text fields.
+            getWSpecialLbP2().setText("SpellCharges");
+            getWAttackTfP2().setText("" + getAStaff().getAttack());
+            getWWeightTfP2().setText("" + getAStaff().getWeight());
+            getWSpecialTfP2().setText("" + getAStaff().getSpellCharge());
         });
         //JRadioButton Bow action listener.
-        getRadioBow().addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                //Plays sound effect once.
-                getEffectEquip3().playOnce();
-                //Sets weapon picture.
-                getPicWeaponLbP2().setIcon(getABow().getBowImage());
-                //Changes Description in weapon Text area.
-                getWeaponDescription().setText(getABow().getWeaponDescription());
-                //Sets weapon labels and text fields.
-                getWSpecialLbP2().setText("Range Modifier");
-                getWAttackTfP2().setText("" + getABow().getAttack());
-                getWWeightTfP2().setText("" + getABow().getWeight());
-                getWSpecialTfP2().setText("" + getABow().getRangeModifier());
-            }
+        getRadioBow().addActionListener(e -> {
+            //Plays sound effect once.
+            getEffectEquip3().playOnce();
+            //Sets weapon picture.
+            getPicWeaponLbP2().setIcon(getABow().getBowImage());
+            //Changes Description in weapon Text area.
+            getWeaponDescription().setText(getABow().getWeaponDescription());
+            //Sets weapon labels and text fields.
+            getWSpecialLbP2().setText("Range Modifier");
+            getWAttackTfP2().setText("" + getABow().getAttack());
+            getWWeightTfP2().setText("" + getABow().getWeight());
+            getWSpecialTfP2().setText("" + getABow().getRangeModifier());
         });
     }
+
+    @Override
+    public void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        g.drawImage(bg, 0, 0, getWidth(), getHeight(), this);
+    }
+
     private Boolean inputCheck(String name, String stat, ButtonGroup classes, ButtonGroup weapons) {
         //Set boolean to true every time method is run.
         boolean acceptableInput = true;
@@ -537,14 +540,6 @@ public class CharacterSelect extends JPanels {
 
     static JTextFields getAgilityTfP2() { return agilityTfP2; }
 
-    public static JLabels getwSpecialLbP2() { return wSpecialLbP2; }
-
-    public static JTextFields getwAttackTfP2() { return wAttackTfP2; }
-
-    public static JTextFields getwWeightTfP2() { return wWeightTfP2; }
-
-    public static JTextFields getwSpecialTfP2() { return wSpecialTfP2; }
-
     public static JTextFields getAttackTfP2() { return attackTfP2; }
 
     public static JTextFields getHitPointsTfP2() { return hitPointsTfP2; }
@@ -557,9 +552,9 @@ public class CharacterSelect extends JPanels {
 
     public static JTextFields getHitTfP2() { return hitTfP2; }
 
-    public static JTextFields getmAttackTfP2() { return mAttackTfP2; }
+    public static JTextFields getMAttackTfP2() { return mAttackTfP2; }
 
-    public static JTextFields getmDefenceTfP2() { return mDefenceTfP2; }
+    public static JTextFields getMDefenceTfP2() { return mDefenceTfP2; }
 
     public static JTextFields getWeightTfP2() { return weightTfP2; }
 

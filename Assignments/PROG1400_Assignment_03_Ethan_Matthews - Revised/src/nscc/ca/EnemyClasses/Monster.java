@@ -7,16 +7,14 @@ public abstract class Monster extends Character {
 
     private String monsterName;
     //Constructor.
-    public Monster(String monsterName, int strength, int vitality, int intelligence, int dexterity, int agility) {
+    Monster(String monsterName, int strength, int vitality, int intelligence, int dexterity, int agility) {
         super(strength, intelligence, dexterity, vitality, agility);
         this.monsterName = monsterName;
     }
     //Getters.
-    public String getMonsterName() {
+    String getMonsterName() {
         return monsterName;
     }
-    //Setters.
-    public void setMonsterName(String monsterName) { this.monsterName = monsterName; }
 
     @Override
     public abstract String toString();

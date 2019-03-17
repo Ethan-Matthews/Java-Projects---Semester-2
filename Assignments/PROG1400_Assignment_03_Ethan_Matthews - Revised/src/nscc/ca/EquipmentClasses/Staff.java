@@ -22,13 +22,6 @@ public class Staff extends Equipment{
 
     public String getWeaponDescription() { return weaponDescription; }
 
-    //Setters.
-    public void setStaffImage(ImageIcon staffImage) { this.staffImage = staffImage; }
-
-    public void setSpellCharge(int spellCharge) { this.spellCharge = spellCharge; }
-
-    public void setWeaponDescription(String weaponDescription) { this.weaponDescription = weaponDescription; }
-
     //To String formats text for Staff output in Char screen.
     @Override
     public String toString() {

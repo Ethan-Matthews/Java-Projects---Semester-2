@@ -7,7 +7,7 @@ public abstract class Character {
     private int dexterity;
     private int agility;
     //Constructor
-    public Character(int strength, int vitality, int intelligence, int dexterity, int agility) {
+    protected Character(int strength, int vitality, int intelligence, int dexterity, int agility) {
         this.strength = strength;
         this.vitality = vitality;
         this.intelligence = intelligence;
@@ -15,23 +15,23 @@ public abstract class Character {
         this.agility = agility;
     }
 
-    public int getStrength() {
+    protected int getStrength() {
         return strength;
     }
 
-    public int getIntelligence() {
+    protected int getIntelligence() {
         return intelligence;
     }
 
-    public int getDexterity() {
+    protected int getDexterity() {
         return dexterity;
     }
 
-    public int getVitality() {
+    protected int getVitality() {
         return vitality;
     }
 
-    public int getAgility() { return agility; }
+    protected int getAgility() { return agility; }
 
     public void setStrength(int strength) {
         this.strength = strength;

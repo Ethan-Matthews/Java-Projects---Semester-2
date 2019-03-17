@@ -6,7 +6,7 @@ import java.awt.*;
 //Custom Class extends from JPanel.
 public class JPanels extends JPanel {
 
-    public JPanels() {
+    protected JPanels() {
         //Sets background colour for JPanel.
         setBounds(0, 0, 1000, 1000);
         setBackground(Color.BLACK);

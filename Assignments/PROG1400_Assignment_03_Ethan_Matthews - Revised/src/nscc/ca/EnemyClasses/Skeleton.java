@@ -14,15 +14,9 @@ public class Skeleton extends Monster {
         this.skeletonImage = new ImageIcon(this.getClass().getResource("/Images/Skeleton_Warrior.png"));
     }
     //Getters
-    public int getResurrectionCharge() {
+    private int getResurrectionCharge() {
         return resurrectionCharge;
     }
-
-    public ImageIcon getSkeletonImage() { return skeletonImage; }
-    //Setters.
-    public void setResurrectionCharge(int resurrectionCharge) { this.resurrectionCharge = resurrectionCharge; }
-
-    public void setSkeletonImage(ImageIcon skeletonImage) { this.skeletonImage = skeletonImage; }
 
     //To String formats text for skeleton output in battle screen.
     @Override

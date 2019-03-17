@@ -17,20 +17,10 @@ public class Ranger extends Player {
         this.rangerImage = new ImageIcon(this.getClass().getResource("/Images/Ranger.png"));
         this.classDescription = " THE RANGER\n SKILLED WITH THE USE OF LONG RANGE WEAPONS. HIGH\n DEXTERITY AND INTELLIGENCE, LOW STRENGTH AND VITALITY.";
     }
-    //Getters.
-    public int getRangeBonus() {
-        return rangeBonus;
-    }
 
     public ImageIcon getRangerImage() { return rangerImage; }
 
     public String getClassDescription() { return classDescription; }
-    //Setters.
-    public void setRangeBonus(int rangeBonus) { this.rangeBonus = rangeBonus; }
-
-    public void setRangerImage(ImageIcon rangerImage) { this.rangerImage = rangerImage; }
-
-    public void setClassDescription(String classDescription) { this.classDescription = classDescription; }
 
     //To String formats text for ranger output in battle screen.
     @Override

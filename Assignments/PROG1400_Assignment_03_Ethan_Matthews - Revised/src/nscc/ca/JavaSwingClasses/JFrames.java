@@ -76,6 +76,8 @@ public class JFrames extends JFrame {
         setTitle("Fools Quest RPG Character Creator");
         //Sets Default Size for Frame.
         setSize(1300, 1000);
+        //Makes the Program start at the center of Screen.
+        setLocationRelativeTo(null);
         //Sets card layout.
         setLayout(new CardLayout(0, 0));
 
@@ -86,10 +88,6 @@ public class JFrames extends JFrame {
         add(characterSelectP2);
         add(battleScreenP3);
 
-        //Makes the Program start at the center of the monitor regardless of resolution.
-        Dimension Center = Toolkit.getDefaultToolkit().getScreenSize();
-        this.setLocation(Center.width/2-this.getSize().width/2, Center.height/2-this.getSize().height/2);
-        setResizable(false);
 
     }
 

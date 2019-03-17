@@ -14,15 +14,9 @@ public class Dragon extends Monster {
         this.dragonImage = new ImageIcon(this.getClass().getResource("/Images/Dragon.png"));
     }
     //Getters.
-    public String getBreathType() {
+    private String getBreathType() {
         return breathType;
     }
-
-    public ImageIcon getDragonImage() { return dragonImage; }
-    //Setters.
-    public void setDragonImage(ImageIcon dragonImage) { this.dragonImage = dragonImage; }
-
-    public void setBreathType(String breathType) { this.breathType = breathType; }
 
     //To String formats text for Dragon output in battle screen.
     @Override

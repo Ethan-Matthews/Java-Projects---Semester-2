@@ -17,22 +17,10 @@ public class Paladin extends Player {
         this.paladinImage = new ImageIcon(this.getClass().getResource("/Images/Paladin.png"));
         this.classDescription = " THE RANGER\n SKILLED WITH THE USE OF LONG RANGE WEAPONS. HIGH\n DEXTERITY AND INTELLIGENCE, LOW STRENGTH AND VITALITY.";
     }
-    //Getters.
-    public int getHealBonus() {
-        return healBonus;
-    }
 
     public ImageIcon getPaladinImage() { return paladinImage; }
 
     public String getClassDescription() { return classDescription; }
-    //Setters.
-    public void setPaladinImage(ImageIcon paladinImage) { this.paladinImage = paladinImage; }
-
-    public void setClassDescription(String classDescription) { this.classDescription = classDescription; }
-
-    public void setHealBonus(int healBonus) {
-        this.healBonus = healBonus;
-    }
 
     //To String formats text for Paladin output in battle screen.
     @Override

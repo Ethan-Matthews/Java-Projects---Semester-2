@@ -18,19 +18,9 @@ public class Mage extends Player {
         this.classDescription = " THE MAGE\n A MASTER OF THE ELEMENTS AND ARCANE ARTS. HIGH\n INTELLIGENCE AND DEXTERITY, LOW VITALITY AND STRENGTH.";
     }
 
-    public int getSpellPower() {
-        return spellPower;
-    }
-
     public ImageIcon getMageImage() { return mageImage; }
 
     public String getClassDescription() { return classDescription; }
-
-    public void setSpellPower(int spellPower) { this.spellPower = spellPower; }
-
-    public void setMageImage(ImageIcon mageImage) { this.mageImage = mageImage; }
-
-    public void setClassDescription(String classDescription) { this.classDescription = classDescription; }
 
     //To String formats text for Mage output in battle screen.
     @Override
