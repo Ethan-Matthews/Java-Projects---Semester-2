@@ -8,8 +8,6 @@ import nscc.ca.SoundClass.Sound;
 
 import javax.swing.*;
 import java.awt.CardLayout;
-import java.awt.Dimension;
-import java.awt.Toolkit;
 
 public class JFrames extends JFrame {
 
