@@ -466,11 +466,11 @@ public class CharacterSelect extends JPanels {
         });
     }
 
-    @Override
-    public void paintComponent(Graphics g) {
-        super.paintComponent(g);
-        g.drawImage(bg, 0, 0, getWidth(), getHeight(), this);
-    }
+//    @Override
+//    public void paintComponent(Graphics g) {
+//        super.paintComponent(g);
+//        g.drawImage(bg, 0, 0, getWidth(), getHeight(), this);
+//    }
 
     private Boolean inputCheck(String name, String stat, ButtonGroup classes, ButtonGroup weapons) {
         //Set boolean to true every time method is run.

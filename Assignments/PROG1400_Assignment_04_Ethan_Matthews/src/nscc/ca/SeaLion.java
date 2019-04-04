@@ -1,16 +1,17 @@
 package nscc.ca;
 
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
+
 public class SeaLion extends Animal implements Loggable {
 
     private int numberOfSpots;
-
+    //Constructor
     public SeaLion(String gender, int weight, GPS location, int numberOfSpots) {
         super(gender, weight, location);
         this.numberOfSpots = numberOfSpots;
-    }
-
-    public int getNumberOfSpots() {
-        return numberOfSpots;
     }
 
     public void setNumberOfSpots(int numberOfSpots) {
@@ -22,13 +23,13 @@ public class SeaLion extends Animal implements Loggable {
         return "SeaLion";
     }
 
+    //Writes gps locations to file.
     @Override
-    public String readFile(String FileName) {
-        return null;
-    }
-
-    @Override
-    public String writeFile(String FileName) {
-        return null;
+    public void writeFile() {
+        byte[] data = this.getGPS().getLocation().getBytes();
+        try {
+            Path filePath = Paths.get("src\\Files\\GPS.txt");
+            Files.write(filePath, data, StandardOpenOption.APPEND);
+        } catch (Exception e) {e.printStackTrace();}
     }
 }

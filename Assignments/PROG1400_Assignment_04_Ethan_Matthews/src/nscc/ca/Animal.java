@@ -5,23 +5,17 @@ public abstract class Animal {
     private String gender;
     private int weight;
     private GPS location;
-
+    //Constructor
     Animal(String gender, int weight,GPS location) {
         this.gender = gender;
         this.weight = weight;
         this.location = location;
     }
 
-    public String getGender() {
-        return gender;
-    }
+    public GPS getGPS() { return location; }
 
-    public int getWeight() {
-        return weight;
-    }
-
-    public GPS getGps() {
-        return location;
+    public void setGPS(GPS location) {
+        this.location = location;
     }
 
     public void setGender(String gender) {
@@ -32,9 +26,7 @@ public abstract class Animal {
         this.weight = weight;
     }
 
-    public void setGps(GPS location) {
-        this.location = location;
-    }
+
 
     @Override
     public abstract String toString();

@@ -1,11 +1,24 @@
 package nscc.ca;
 
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
+
 public class Walrus extends Animal implements Loggable {
 
     private String dentalHealth;
-
+    //Constructor
     Walrus(String gender, int weight, GPS location, String dentalHealth) {
         super(gender, weight, location);
+        this.dentalHealth = dentalHealth;
+    }
+
+    public String getDentalHealth() {
+        return dentalHealth;
+    }
+
+    public void setDentalHealth(String dentalHealth) {
         this.dentalHealth = dentalHealth;
     }
 
@@ -14,13 +27,14 @@ public class Walrus extends Animal implements Loggable {
         return "Walrus";
     }
 
-    @Override
-    public String readFile(String FileName) {
-        return null;
-    }
 
+    //Writes gps locations to file.
     @Override
-    public String writeFile(String FileName) {
-        return null;
+    public void writeFile() {
+        byte[] data = this.getGPS().getLocation().getBytes();
+        try {
+            Path filePath = Paths.get("src\\Files\\GPS.txt");
+            Files.write(filePath, data, StandardOpenOption.APPEND);
+        } catch (Exception e) {e.printStackTrace();}
     }
 }

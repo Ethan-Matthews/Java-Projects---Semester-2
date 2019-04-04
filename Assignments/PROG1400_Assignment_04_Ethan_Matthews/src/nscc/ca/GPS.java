@@ -3,24 +3,21 @@ package nscc.ca;
 public class GPS implements Loggable {
 
     private String location;
-
+    //Constructor
     GPS(String location) {
         this.location = location;
     }
 
+    public String getLocation() {
+        return location;
+    }
 
     @Override
     public String toString() {
         return "";
     }
 
-    @Override
-    public String readFile(String FileName) {
-        return null;
-    }
 
     @Override
-    public String writeFile(String FileName) {
-        return null;
-    }
+    public void writeFile() {}
 }
